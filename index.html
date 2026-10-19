@@ -1,12 +1,13 @@
 <!doctype html>
 <html lang="zh-TW" class="h-full">
- <head><script>window["__codeletBootstrap__"]=JSON.parse('{"A":"A","B":"20261019-02-405757e","C":{"Abril Fatface":"YACgEZbkUVE,0","Albert Sans":"YAHO2HRfeh4,0","Alfa Slab One":"YACgEYS9sJU,0","Anton":"YACgEcYqQ-A,0","Archivo Black":"YACgEZulLoA,0","Archivo":"YAHO2-t-jNE,0","Arial":"YAGyDvJ_4Ts,0","Baloo 2":"YAHO2IcQUcM,0","Barlow Condensed":"YAFdJljEuFc,0","Barlow":"YAFdJsyuOPM,1","Bebas Neue":"YACgESME5ew,0","Bricolage Grotesque":"YAFyMcdwzpc,0","Cairo":"YAFdtXpDzlQ,0","Canva Sans":"YAFdJjTk5UU,1","Caveat":"YALBs2ploWQ,0","Cinzel":"YACgEeV8bIQ,0","Cormorant Garamond":"YAFdJhX-538,0","Courier New":"YAGzXiGs0_8,0","Courier Prime":"YAD1aFjegN8,0","DM Sans":"YAD1aU3sLnI,0","DM Serif Display":"YAD1aYG82rc,0","Figtree":"YAHO2b-mV7A,0","Forum":"YACgEcnnqB4,0","Fraunces":"YAFdJpU7Kkk,0","Fredoka":"YACgEZml080,0","Georgia":"YAGzXkO0pEM,0","Hanken Grotesk":"YAHO2VB9G0I,0","Helvetica":"YAFcf7zkXN0,0","IBM Plex Mono":"YAFdJkmvhGI,0","IBM Plex Sans":"YAFdJgT0SHI,0","Impact":"YAFcfnjI7Vk,0","Instrument Sans":"YAHO2bKyaSQ,0","Instrument Serif":"YAHFeOnZNEk,0","Inter":"YAFdJvSyp_k,3","Italiana":"YAHO2Toik_w,0","Jacques Francois":"YAHO2a5g66Q,0","JetBrains Mono":"YAFdJksXcAk,0","Josefin Sans":"YAFdJjvw9Ps,0","Karla":"YAHO2V2NSXM,0","Lato":"YAFdJuFCnaw,0","Libre Baskerville":"YACgEUFdPdA,0","Libre Caslon Display":"YAHO2XhLmt0,0","Lobster":"YAD8SnSjSFI,0","Lora":"YACgEXvxf8Q,0","Manrope":"YAHO2b2feC4,0","Merriweather":"YACgEXvHxxs,0","Montserrat":"YAFdtQi73Xs,0","Noto Sans JP":"YAFdJiHXlcI,0","Noto Sans KR":"YAGsojZj-RQ,0","Nunito Sans":"YAFdtQJYB9w,1","Nunito":"YAFdJoNRMmU,1","Oleo Script":"YACgEQQ14jI,0","Open Sans":"YAFdJt8dAY0,1","Oswald":"YACgEQY10lw,0","Outfit":"YAHO2nVlg14,0","Pacifico":"YADLjORQ1u4,0","Playfair Display":"YAFdJhem5V8,1","Plus Jakarta Sans":"YAHO2gdhi18,0","Poppins":"YAFdJjbTu24,1","Press Start 2P":"YAFyGr-8pmQ,0","Public Sans":"YAFdJj8NdaU,1","Quicksand":"YAFdJpYtCxE,1","Raleway":"YAFdJhmxbVQ,1","Roboto Slab":"YAFdJswIKAg,0","Rockwell":"YAFcfyVZnN0,0","Rye":"YACgEdQP21k,0","STIX Two Text":"YAHO2joycuk,0","Sarabun":"YAFdJssSnME,0","Schibsted Grotesk":"YAHO2sWydRk,0","Segoe UI":"YAHNdRD1Klw,0","Source Sans 3":"YAG4lO1Mj10,0","Space Grotesk":"YAHO2sjPCSM,0","Space Mono":"YADW1-vpsoc,0","Spectral":"YAHO2rVUHIM,0","Times New Roman":"YAGzXW3gftg,0","Trebuchet MS":"YAFcfrglpVA,0","Ubuntu":"YACgERDU--Q,0","Verdana":"YAGzXTctYtQ,0","Work Sans":"YAGXhLOKv44,0","Yellowtail":"YACgEYG4kG4,0"}}');</script><script src="/_sdk/05db820ba1544614.telemetry_sdk.js" integrity="sha512-a7JzkQDDcioSXpM61nxTfeRW7PcxWQy5+BrhyeTFmQFsXJ+Gncm0y50u7fTA7qOPegFnRgqCfa0mGUOK1yjDWQ=="></script>
+ <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>聖誕節 2048 遊戲</title>
-  <script src="/_sdk/57cc4121c2175bee.element_sdk.js" integrity="sha512-hGAdEssTGqmJffCxZGXpsyTeqAbfcfDLkJM7ul9jslTtAtG+0MEJro2a12Cz/qQBBQ62fPAw2SqERLrhVnqm6A=="></script>
-  <script src="/_sdk/570d53629f0b998d.data_sdk.js" integrity="sha512-JEN39+V+Nvv9ZZOVS8vNk1iA9ErZJHTdgOw9KzPuMiK7m0I+KPEr/wmTnCFIQVsDjCZgJWfGnFi1IQh2Io2qyA=="></script>
+  
+  
   <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js"></script>
   <style>
     body {
       box-sizing: border-box;
@@ -285,7 +286,7 @@
      <form id="nameForm"><label for="playerNameInput" class="block text-left text-gray-700 font-bold mb-2">輸入你的名稱</label> <input type="text" id="playerNameInput" placeholder="輸入你的名稱" maxlength="20" class="w-full px-4 py-3 text-lg border-2 border-gray-300 rounded-lg focus:border-red-500 focus:outline-none mb-4" required> <button type="submit" class="w-full bg-red-600 text-white font-bold py-4 px-8 rounded-xl hover:bg-red-700 transition text-xl shadow-lg"> 開始遊戲 🎮 </button>
      </form>
      <div class="mt-4 text-sm text-gray-600">
-      <p>此裝置會自動獲得唯一的玩家 ID</p>
+      <p>首次連線將建立玩家帳號與專屬 ID</p>
      </div>
     </div>
     <div class="mt-8 text-white text-xs opacity-75">
@@ -426,7 +427,7 @@
    </div><!-- 排行榜畫面 -->
    <div id="leaderboardScreen" class="max-w-2xl w-full text-center" style="display: none;">
     <div class="bg-white rounded-2xl p-8 shadow-2xl max-h-[90vh] overflow-y-auto">
-     <h1 class="text-4xl font-bold text-yellow-600 mb-6">🏆 全球排行榜</h1>
+     <h1 class="text-4xl font-bold text-yellow-600 mb-6">🏆 本機成績排行榜（測試版）</h1>
      <div class="flex justify-center gap-4 mb-6"><button id="leaderboard4x4Tab" class="px-6 py-3 rounded-lg font-bold transition text-lg bg-red-600 text-white"> 🎅 4×4 模式 </button> <button id="leaderboard6x6Tab" class="px-6 py-3 rounded-lg font-bold transition text-lg bg-gray-300 text-gray-700"> ⛄ 6×6 模式 </button>
      </div>
      <div id="leaderboardContent" class="space-y-3"><!-- 排行榜內容會在這裡動態生成 -->
@@ -891,7 +892,7 @@
             const recordId = e.target.getAttribute('data-record-id');
             const record = leaderboardData.find(r => r.__backendId === recordId);
             
-            if (record && window.dataSdk) {
+            if (false && record && window.dataSdk) {
               button.textContent = '確認？';
               button.classList.add('bg-yellow-500');
               
@@ -932,20 +933,75 @@
       renderStats();
     }
 
-    // Data SDK Handler
-    const dataHandler = {
-      onDataChanged(data) {
-        leaderboardData = data;
-        if (document.getElementById('leaderboardScreen').style.display === 'block') {
-          renderLeaderboard();
-        }
-        if (document.getElementById('statsScreen').style.display === 'block') {
-          renderStats();
-        }
-      }
-    };
+         // Supabase 連線設定：只填入公開的 Project URL 和 publishable / anon key。
+     const SUPABASE_URL = 'https://epconzykantkmraalubn.supabase.co';
+     const SUPABASE_PUBLIC_KEY = 'sb_publishable_A10kUjxvqXmOFwvceNot9g_md2yqpXn';
+     const SUPABASE_READY = SUPABASE_URL.startsWith('https://') && !SUPABASE_PUBLIC_KEY.startsWith('PASTE_');
+     const db = SUPABASE_READY && window.supabase ? window.supabase.createClient(SUPABASE_URL, SUPABASE_PUBLIC_KEY) : null;
+     let authUser = null;
+     let onlineProfile = null;
 
-    function preloadImages() {
+     function setConnectionStatus(message) {
+       const el = document.getElementById('connectionStatus');
+       if (el) el.textContent = message;
+     }
+
+     async function loadOnlineIdentity() {
+       if (!db) {
+         setConnectionStatus('尚未設定 Supabase，現在使用單機模式。');
+         return;
+       }
+       try {
+         let { data: sessionData, error: sessionError } = await db.auth.getSession();
+         if (sessionError) throw sessionError;
+         let user = sessionData.session?.user;
+         if (!user) {
+           const result = await db.auth.signInAnonymously();
+           if (result.error) throw result.error;
+           user = result.data.user;
+         }
+         authUser = user;
+         const { data, error } = await db.from('profiles')
+           .select('user_id,player_id,player_name,player_avatar')
+           .eq('user_id', user.id).maybeSingle();
+         if (error) throw error;
+         if (data) {
+           onlineProfile = data;
+         } else {
+           const result = await db.from('profiles').insert({ user_id: user.id, player_name: '新玩家' })
+             .select('user_id,player_id,player_name,player_avatar').single();
+           if (result.error) throw result.error;
+           onlineProfile = result.data;
+         }
+         playerId = onlineProfile.player_id;
+         if (onlineProfile.player_name !== '新玩家') playerName = onlineProfile.player_name;
+         if (onlineProfile.player_avatar) playerAvatar = onlineProfile.player_avatar;
+         setConnectionStatus('已連接 Supabase，玩家 ID：' + playerId);
+       } catch (err) {
+         console.error('Supabase connection failed:', err);
+         setConnectionStatus('線上連線失敗，暫時使用單機模式。請檢查金鑰與匿名登入設定。');
+       }
+     }
+
+     async function saveOnlineProfile() {
+       if (!db || !authUser) return;
+       const { error } = await db.from('profiles').update({
+         player_name: playerName, player_avatar: playerAvatar
+       }).eq('user_id', authUser.id);
+       if (error) {
+         console.error('無法同步玩家資料:', error);
+         setConnectionStatus('玩家資料暫時無法同步，已保存在這個瀏覽器。');
+       }
+     }
+
+     function loadLocalScores() {
+       try {
+         leaderboardData = JSON.parse(localStorage.getItem('2048-christmas-local-scores') || '[]');
+         if (!Array.isArray(leaderboardData)) leaderboardData = [];
+       } catch (e) { leaderboardData = []; }
+     }
+
+function preloadImages() {
       return new Promise((resolve) => {
         if (totalImages === 0) {
           resolve();
@@ -974,7 +1030,7 @@
         const elapsed = Math.floor((Date.now() - gameStartTime) / 1000);
         const minutes = Math.floor(elapsed / 60);
         const seconds = elapsed % 60;
-        document.getElementById('playTime').textContent = 
+        (document.getElementById('playTime') || {textContent: ''}).textContent = 
           `${String(minutes).padStart(2, '0')}:${String(seconds).padStart(2, '0')}`;
       }
     }
@@ -987,7 +1043,7 @@
       const hours = String(now.getHours()).padStart(2, '0');
       const minutes = String(now.getMinutes()).padStart(2, '0');
       const seconds = String(now.getSeconds()).padStart(2, '0');
-      document.getElementById('currentDateTime').textContent = 
+      (document.getElementById('currentDateTime') || {textContent: ''}).textContent = 
         `${year}/${month}/${day} ${hours}:${minutes}:${seconds}`;
     }
     
@@ -1224,7 +1280,7 @@
                   <div class="text-2xl font-bold text-red-600">${record.score}</div>
                   <div class="text-xs text-gray-500">分數</div>
                 </div>
-                ${isCurrentPlayer ? `<button class="delete-record-btn bg-red-500 text-white px-3 py-2 rounded-lg hover:bg-red-600 transition text-xs" data-record-id="${record.__backendId}">🗑️ 刪除</button>` : ''}
+                
               </div>
             </div>
           </div>
@@ -1237,7 +1293,7 @@
           const recordId = e.target.getAttribute('data-record-id');
           const record = leaderboardData.find(r => r.__backendId === recordId);
           
-          if (record && window.dataSdk) {
+          if (false && record && window.dataSdk) {
             button.textContent = '確認刪除？';
             button.classList.add('bg-yellow-500');
             button.classList.remove('bg-red-500');
@@ -1376,37 +1432,22 @@
       document.getElementById('gameScreen').style.display = 'none';
       document.getElementById('gameOverScreen').style.display = 'block';
 
-      if (window.dataSdk && leaderboardData.length < 999) {
-        document.getElementById('savingIndicator').style.display = 'block';
-        
-        const result = await window.dataSdk.create({
-          player_name: playerName,
-          player_id: playerId,
-          player_avatar: playerAvatar,
-          score: score,
-          play_time_seconds: elapsed,
-          game_mode: currentMode,
-          highest_tile: highestTile,
-          completed_at: new Date().toISOString()
-        });
-
-        document.getElementById('savingIndicator').style.display = 'none';
-        
-        if (result.isError) {
-          console.error('Failed to save score:', result.error);
-        } else {
-          // 檢查新成就
-          const newAchievements = checkAchievements();
-          if (newAchievements.length > 0) {
-            const notice = document.getElementById('newAchievementNotice');
-            const list = document.getElementById('newAchievementsList');
-            list.innerHTML = newAchievements.map(a => 
-              `<div class="achievement-badge achievement-unlocked">${a.icon} ${a.name} - ${a.desc}</div>`
-            ).join('');
-            notice.style.display = 'block';
-          }
-        }
-      }
+             // 本機成績：尚未開放未經伺服器驗證的線上成績寫入。
+       const localRecord = {
+         player_name: playerName, player_id: playerId, player_avatar: playerAvatar,
+         score, play_time_seconds: elapsed, game_mode: currentMode,
+         highest_tile: highestTile, completed_at: new Date().toISOString()
+       };
+       leaderboardData.push(localRecord);
+       try { localStorage.setItem('2048-christmas-local-scores', JSON.stringify(leaderboardData.slice(-1000))); }
+       catch (e) { console.warn('本機成績無法保存', e); }
+       const newAchievements = checkAchievements();
+       if (newAchievements.length > 0) {
+         document.getElementById('newAchievementNotice').style.display = 'block';
+         document.getElementById('newAchievementsList').innerHTML = newAchievements.map(a =>
+           `<div class="achievement-badge achievement-unlocked">${a.icon} ${a.name} - ${a.desc}</div>`
+         ).join('');
+       }
     }
 
     function move(direction) {
@@ -1583,7 +1624,7 @@
       }
     }
 
-    document.getElementById('nameForm').addEventListener('submit', (e) => {
+    document.getElementById('nameForm').addEventListener('submit', async (e) => {
       e.preventDefault();
       const nameInput = document.getElementById('playerNameInput');
       playerName = nameInput.value.trim();
@@ -1717,7 +1758,7 @@
       if (savedName && savedAvatar) {
         playerName = savedName;
         playerAvatar = savedAvatar;
-        document.getElementById('playerNameInput').value = savedName;
+        document.getElementById('playerNameInput').value = playerName;
         showMainMenu();
       } else {
         showNameInput();
@@ -1730,31 +1771,6 @@
       init();
     }
 
-    if (window.elementSdk) {
-      window.elementSdk.init({
-        defaultConfig,
-        onConfigChange,
-        mapToCapabilities: (config) => ({
-          recolorables: [{
-            get: () => config.background_color || defaultConfig.background_color,
-            set: (value) => {
-              config.background_color = value;
-              window.elementSdk.setConfig({ background_color: value });
-            }
-          }],
-          borderables: [],
-          fontEditable: undefined,
-          fontSizeable: undefined
-        }),
-        mapToEditPanelValues: (config) => new Map([
-          ["game_title", config.game_title || defaultConfig.game_title],
-          ["instructions_text", config.instructions_text || defaultConfig.instructions_text],
-          ["new_game_button", config.new_game_button || defaultConfig.new_game_button],
-          ["score_label", config.score_label || defaultConfig.score_label],
-          ["best_score_label", config.best_score_label || defaultConfig.best_score_label]
-        ])
-      });
-    }
-  </script>
+    </script>
  </body>
 </html>
