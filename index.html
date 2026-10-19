@@ -1629,10 +1629,10 @@ function preloadImages() {
       const nameInput = document.getElementById('playerNameInput');
       playerName = nameInput.value.trim();
       if (playerName && playerAvatar) {
-        localStorage.setItem('2048-christmas-player-name', playerName);
-        localStorage.setItem('2048-christmas-player-avatar', playerAvatar);
-        showMainMenu();
-      }
+  localStorage.setItem('2048-christmas-player-name', playerName);
+  localStorage.setItem('2048-christmas-player-avatar', playerAvatar);
+  showMainMenu();
+}
     });
     
     document.getElementById('changeNameBtn').addEventListener('click', () => {
