@@ -1239,7 +1239,7 @@ async function renderLeaderboard() {
       .select('*')
       .eq('game_mode', currentLeaderboardMode)
       .order('score', { ascending: false })
-      .limit(10);
+      .limit(1000);
 
     if (error) {
       console.error('歷史排行榜讀取失敗:', error);
