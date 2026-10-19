@@ -1,0 +1,1760 @@
+<!doctype html>
+<html lang="zh-TW" class="h-full">
+ <head><script>window["__codeletBootstrap__"]=JSON.parse('{"A":"A","B":"20261019-02-405757e","C":{"Abril Fatface":"YACgEZbkUVE,0","Albert Sans":"YAHO2HRfeh4,0","Alfa Slab One":"YACgEYS9sJU,0","Anton":"YACgEcYqQ-A,0","Archivo Black":"YACgEZulLoA,0","Archivo":"YAHO2-t-jNE,0","Arial":"YAGyDvJ_4Ts,0","Baloo 2":"YAHO2IcQUcM,0","Barlow Condensed":"YAFdJljEuFc,0","Barlow":"YAFdJsyuOPM,1","Bebas Neue":"YACgESME5ew,0","Bricolage Grotesque":"YAFyMcdwzpc,0","Cairo":"YAFdtXpDzlQ,0","Canva Sans":"YAFdJjTk5UU,1","Caveat":"YALBs2ploWQ,0","Cinzel":"YACgEeV8bIQ,0","Cormorant Garamond":"YAFdJhX-538,0","Courier New":"YAGzXiGs0_8,0","Courier Prime":"YAD1aFjegN8,0","DM Sans":"YAD1aU3sLnI,0","DM Serif Display":"YAD1aYG82rc,0","Figtree":"YAHO2b-mV7A,0","Forum":"YACgEcnnqB4,0","Fraunces":"YAFdJpU7Kkk,0","Fredoka":"YACgEZml080,0","Georgia":"YAGzXkO0pEM,0","Hanken Grotesk":"YAHO2VB9G0I,0","Helvetica":"YAFcf7zkXN0,0","IBM Plex Mono":"YAFdJkmvhGI,0","IBM Plex Sans":"YAFdJgT0SHI,0","Impact":"YAFcfnjI7Vk,0","Instrument Sans":"YAHO2bKyaSQ,0","Instrument Serif":"YAHFeOnZNEk,0","Inter":"YAFdJvSyp_k,3","Italiana":"YAHO2Toik_w,0","Jacques Francois":"YAHO2a5g66Q,0","JetBrains Mono":"YAFdJksXcAk,0","Josefin Sans":"YAFdJjvw9Ps,0","Karla":"YAHO2V2NSXM,0","Lato":"YAFdJuFCnaw,0","Libre Baskerville":"YACgEUFdPdA,0","Libre Caslon Display":"YAHO2XhLmt0,0","Lobster":"YAD8SnSjSFI,0","Lora":"YACgEXvxf8Q,0","Manrope":"YAHO2b2feC4,0","Merriweather":"YACgEXvHxxs,0","Montserrat":"YAFdtQi73Xs,0","Noto Sans JP":"YAFdJiHXlcI,0","Noto Sans KR":"YAGsojZj-RQ,0","Nunito Sans":"YAFdtQJYB9w,1","Nunito":"YAFdJoNRMmU,1","Oleo Script":"YACgEQQ14jI,0","Open Sans":"YAFdJt8dAY0,1","Oswald":"YACgEQY10lw,0","Outfit":"YAHO2nVlg14,0","Pacifico":"YADLjORQ1u4,0","Playfair Display":"YAFdJhem5V8,1","Plus Jakarta Sans":"YAHO2gdhi18,0","Poppins":"YAFdJjbTu24,1","Press Start 2P":"YAFyGr-8pmQ,0","Public Sans":"YAFdJj8NdaU,1","Quicksand":"YAFdJpYtCxE,1","Raleway":"YAFdJhmxbVQ,1","Roboto Slab":"YAFdJswIKAg,0","Rockwell":"YAFcfyVZnN0,0","Rye":"YACgEdQP21k,0","STIX Two Text":"YAHO2joycuk,0","Sarabun":"YAFdJssSnME,0","Schibsted Grotesk":"YAHO2sWydRk,0","Segoe UI":"YAHNdRD1Klw,0","Source Sans 3":"YAG4lO1Mj10,0","Space Grotesk":"YAHO2sjPCSM,0","Space Mono":"YADW1-vpsoc,0","Spectral":"YAHO2rVUHIM,0","Times New Roman":"YAGzXW3gftg,0","Trebuchet MS":"YAFcfrglpVA,0","Ubuntu":"YACgERDU--Q,0","Verdana":"YAGzXTctYtQ,0","Work Sans":"YAGXhLOKv44,0","Yellowtail":"YACgEYG4kG4,0"}}');</script><script src="/_sdk/05db820ba1544614.telemetry_sdk.js" integrity="sha512-a7JzkQDDcioSXpM61nxTfeRW7PcxWQy5+BrhyeTFmQFsXJ+Gncm0y50u7fTA7qOPegFnRgqCfa0mGUOK1yjDWQ=="></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>聖誕節 2048 遊戲</title>
+  <script src="/_sdk/57cc4121c2175bee.element_sdk.js" integrity="sha512-hGAdEssTGqmJffCxZGXpsyTeqAbfcfDLkJM7ul9jslTtAtG+0MEJro2a12Cz/qQBBQ62fPAw2SqERLrhVnqm6A=="></script>
+  <script src="/_sdk/570d53629f0b998d.data_sdk.js" integrity="sha512-JEN39+V+Nvv9ZZOVS8vNk1iA9ErZJHTdgOw9KzPuMiK7m0I+KPEr/wmTnCFIQVsDjCZgJWfGnFi1IQh2Io2qyA=="></script>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    body {
+      box-sizing: border-box;
+      touch-action: manipulation;
+      overscroll-behavior: none;
+      overflow: hidden;
+    }
+    
+    html {
+      overflow: hidden;
+      height: 100%;
+    }
+    
+    .game-container {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+      background: #722f37;
+      overflow-y: auto;
+      -webkit-overflow-scrolling: touch;
+    }
+    
+    .grid-container {
+      background: #bbada0;
+      border-radius: 8px;
+      padding: 8px;
+      display: grid;
+      gap: 6px;
+      max-width: 500px;
+      width: 100%;
+      aspect-ratio: 1;
+      touch-action: none;
+    }
+    
+    .grid-container.grid-4x4 {
+      grid-template-columns: repeat(4, 1fr);
+      grid-template-rows: repeat(4, 1fr);
+    }
+    
+    .grid-container.grid-6x6 {
+      grid-template-columns: repeat(6, 1fr);
+      grid-template-rows: repeat(6, 1fr);
+    }
+    
+    .grid-cell {
+      background: rgba(238, 228, 218, 0.35);
+      border-radius: 4px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.5rem;
+      font-weight: bold;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .tile {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 4px;
+      background-size: cover;
+      background-position: center;
+    }
+    
+    .tile-number {
+      position: absolute;
+      top: 4px;
+      right: 4px;
+      font-size: 0.7rem;
+      font-weight: bold;
+      color: #ffffff;
+      text-shadow: 1px 1px 3px rgba(0,0,0,0.9);
+      padding: 2px 5px;
+      border-radius: 3px;
+      min-width: 20px;
+      text-align: center;
+    }
+    
+    .tile-number-2 { background: #FF6B6B; }
+    .tile-number-4 { background: #4ECDC4; }
+    .tile-number-8 { background: #FFE66D; color: #333; text-shadow: 1px 1px 2px rgba(255,255,255,0.8); }
+    .tile-number-16 { background: #95E1D3; color: #333; text-shadow: 1px 1px 2px rgba(255,255,255,0.8); }
+    .tile-number-32 { background: #F38181; }
+    .tile-number-64 { background: #AA96DA; }
+    .tile-number-128 { background: #FCBAD3; color: #333; text-shadow: 1px 1px 2px rgba(255,255,255,0.8); }
+    .tile-number-256 { background: #A8D8EA; color: #333; text-shadow: 1px 1px 2px rgba(255,255,255,0.8); }
+    .tile-number-512 { background: #FFD93D; color: #333; text-shadow: 1px 1px 2px rgba(255,255,255,0.8); }
+    .tile-number-1024 { background: #6BCB77; }
+    .tile-number-2048 { background: #4D96FF; }
+    .tile-number-4096 { background: #9D4EDD; }
+    .tile-number-8192 { background: #FF006E; }
+    .tile-number-16384 { background: #FB5607; }
+    .tile-number-32768 { background: #FFBE0B; color: #333; text-shadow: 1px 1px 2px rgba(255,255,255,0.8); }
+    .tile-number-65536 { background: #8338EC; }
+    .tile-number-131072 { background: #3A86FF; }
+    .tile-number-262144 { background: #06FFA5; color: #333; text-shadow: 1px 1px 2px rgba(255,255,255,0.8); }
+    .tile-number-524288 { background: #FF006E; }
+    .tile-number-1048576 { background: #C77DFF; }
+    .tile-number-2097152 { background: #7209B7; }
+    .tile-number-4194304 { background: #F72585; }
+    .tile-number-8388608 { background: #4CC9F0; color: #333; text-shadow: 1px 1px 2px rgba(255,255,255,0.8); }
+    .tile-number-16777216 { background: #F94144; }
+    .tile-number-33554432 { background: #F3722C; }
+    .tile-number-67108864 { background: #F9C74F; color: #333; text-shadow: 1px 1px 2px rgba(255,255,255,0.8); }
+    .tile-number-134217728 { background: #90BE6D; }
+    .tile-number-268435456 { background: #43AA8B; }
+    .tile-number-536870912 { background: #577590; }
+    .tile-number-1073741824 { background: #F15BB5; }
+    .tile-number-2147483648 { background: #9B5DE5; }
+    .tile-number-4294967296 { background: #00BBF9; color: #333; text-shadow: 1px 1px 2px rgba(255,255,255,0.8); }
+    .tile-number-8589934592 { background: #00F5FF; color: #333; text-shadow: 1px 1px 2px rgba(255,255,255,0.8); }
+    .tile-number-17179869184 { background: #FEE440; color: #333; text-shadow: 1px 1px 2px rgba(255,255,255,0.8); }
+    .tile-number-34359738368 { background: #F15BB5; }
+    .tile-number-68719476736 { background: #FFD700; color: #333; text-shadow: 1px 1px 2px rgba(255,255,255,0.8); }
+    
+    .tile-new {
+      animation: appear 0.2s ease-in-out;
+    }
+    
+    @keyframes appear {
+      from {
+        transform: scale(0);
+      }
+      to {
+        transform: scale(1);
+      }
+    }
+    
+    .score-container {
+      background: #bbada0;
+      padding: 12px 16px;
+      border-radius: 8px;
+      text-align: center;
+      min-width: 90px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+    }
+    
+    .score-label {
+      font-size: 0.75rem;
+      color: #eee4da;
+      text-transform: uppercase;
+      font-weight: 600;
+      letter-spacing: 0.5px;
+      margin-bottom: 2px;
+    }
+    
+    .score-value {
+      font-size: 1.8rem;
+      font-weight: bold;
+      color: white;
+      text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+      line-height: 1.2;
+    }
+
+    .loading-indicator {
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      color: white;
+      font-size: 1.5rem;
+      z-index: 1000;
+    }
+    
+    .achievement-badge {
+      display: inline-block;
+      padding: 8px 12px;
+      border-radius: 12px;
+      font-size: 0.85rem;
+      font-weight: bold;
+      margin: 4px;
+      transition: transform 0.2s;
+    }
+    
+    .achievement-badge:hover {
+      transform: scale(1.05);
+    }
+    
+    .achievement-locked {
+      background: #e0e0e0;
+      color: #999;
+      opacity: 0.6;
+    }
+    
+    .achievement-unlocked {
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: white;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    }
+    
+    .avatar-option {
+      width: 80px;
+      height: 80px;
+      border-radius: 12px;
+      cursor: pointer;
+      transition: all 0.2s;
+      border: 3px solid transparent;
+      background-size: cover;
+      background-position: center;
+    }
+    
+    .avatar-option:hover {
+      transform: scale(1.1);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+    }
+    
+    .avatar-option.selected {
+      border-color: #ef4444;
+      box-shadow: 0 0 0 2px white, 0 0 0 4px #ef4444;
+      transform: scale(1.05);
+    }
+    
+    .player-avatar {
+      width: 60px;
+      height: 60px;
+      border-radius: 12px;
+      background-size: cover;
+      background-position: center;
+      border: 3px solid white;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+    }
+    
+    @media (max-width: 640px) {
+      .game-container {
+        padding: 12px;
+      }
+      
+      .score-container {
+        padding: 10px 12px;
+        min-width: 75px;
+      }
+      
+      .score-label {
+        font-size: 0.65rem;
+      }
+      
+      .score-value {
+        font-size: 1.5rem;
+      }
+      
+      .avatar-option {
+        width: 60px;
+        height: 60px;
+      }
+      
+      .player-avatar {
+        width: 50px;
+        height: 50px;
+      }
+    }
+  </style>
+  <style>@view-transition { navigation: auto; }</style>
+ </head>
+ <body class="h-full">
+  <div id="loadingIndicator" class="loading-indicator">
+   載入中...
+  </div>
+  <div class="game-container w-full h-full"><!-- 使用者名稱輸入畫面 -->
+   <div id="nameInputScreen" class="max-w-md w-full text-center">
+    <h1 class="text-5xl font-bold text-white mb-4">🎄布布一二🎄</h1>
+    <h2 class="text-3xl font-bold text-white mb-8">聖誕節2048</h2>
+    <div class="bg-white rounded-2xl p-8 shadow-2xl">
+     <h3 class="text-2xl font-bold text-red-700 mb-6">創建你的角色</h3><!-- 頭像選擇 -->
+     <div class="mb-6"><label class="block text-left text-gray-700 font-bold mb-3">選擇你的頭像</label>
+      <div id="avatarSelection" class="grid grid-cols-4 gap-3 mb-4"><!-- 頭像選項會動態生成 -->
+      </div>
+     </div>
+     <form id="nameForm"><label for="playerNameInput" class="block text-left text-gray-700 font-bold mb-2">輸入你的名稱</label> <input type="text" id="playerNameInput" placeholder="輸入你的名稱" maxlength="20" class="w-full px-4 py-3 text-lg border-2 border-gray-300 rounded-lg focus:border-red-500 focus:outline-none mb-4" required> <button type="submit" class="w-full bg-red-600 text-white font-bold py-4 px-8 rounded-xl hover:bg-red-700 transition text-xl shadow-lg"> 開始遊戲 🎮 </button>
+     </form>
+     <div class="mt-4 text-sm text-gray-600">
+      <p>此裝置會自動獲得唯一的玩家 ID</p>
+     </div>
+    </div>
+    <div class="mt-8 text-white text-xs opacity-75">
+     <p>遊戲作者：小小一二</p>
+     <p>圖片來源：小紅書</p>
+    </div>
+   </div><!-- 主選單畫面 -->
+   <div id="mainMenu" class="max-w-lg w-full text-center" style="display: none;">
+    <div class="bg-white bg-opacity-95 rounded-3xl shadow-2xl p-8"><!-- 標題區 -->
+     <div class="mb-6">
+      <h1 class="text-5xl font-bold text-red-700 mb-2">🎄 布布一二 🎄</h1>
+      <h2 class="text-2xl font-bold text-red-600">聖誕節 2048</h2>
+     </div><!-- 玩家資訊卡片 -->
+     <div class="bg-gradient-to-r from-red-50 to-pink-50 border-2 border-red-200 rounded-xl p-4 mb-6">
+      <div class="flex items-center justify-center gap-3">
+       <div id="displayPlayerAvatar" class="player-avatar"></div>
+       <div class="text-left">
+        <div class="text-lg font-bold text-gray-800"><span id="displayPlayerName"></span>
+        </div>
+        <div class="text-xs text-gray-500 font-mono">
+         ID: <span id="displayPlayerId" class="font-bold"></span>
+        </div>
+       </div><button id="changeNameBtn" class="ml-auto bg-gray-200 hover:bg-gray-300 text-gray-700 px-3 py-1 rounded-lg text-xs font-semibold transition"> ✏️ 編輯 </button>
+      </div>
+     </div><!-- 繼續遊戲按鈕（有存檔時顯示）--> <button id="continueGameBtn" class="w-full bg-gradient-to-r from-green-500 to-green-600 text-white font-bold py-4 px-6 rounded-xl hover:from-green-600 hover:to-green-700 transition text-xl shadow-lg mb-4 flex items-center justify-center gap-2" style="display: none;"> <span class="text-2xl">▶️</span> <span>繼續遊戲</span> </button> <!-- 遊戲模式選擇 -->
+     <div class="mb-6">
+      <h3 class="text-lg font-bold text-gray-700 mb-3 text-left">🎮 選擇模式</h3>
+      <div class="grid grid-cols-2 gap-3"><button id="play4x4Btn" class="bg-gradient-to-br from-red-500 to-red-600 text-white font-bold py-8 px-4 rounded-xl hover:from-red-600 hover:to-red-700 transition shadow-lg transform hover:scale-105">
+        <div class="text-4xl mb-2">
+         🎅
+        </div>
+        <div class="text-lg">
+         經典模式
+        </div>
+        <div class="text-sm opacity-90">
+         4×4
+        </div></button> <button id="play6x6Btn" class="bg-gradient-to-br from-blue-500 to-blue-600 text-white font-bold py-8 px-4 rounded-xl hover:from-blue-600 hover:to-blue-700 transition shadow-lg transform hover:scale-105">
+        <div class="text-4xl mb-2">
+         ⛄
+        </div>
+        <div class="text-lg">
+         進階模式
+        </div>
+        <div class="text-sm opacity-90">
+         6×6
+        </div></button>
+      </div>
+     </div><!-- 功能按鈕區 -->
+     <div class="space-y-3">
+      <h3 class="text-lg font-bold text-gray-700 mb-3 text-left">📋 其他功能</h3><button id="leaderboardBtn" class="w-full bg-gradient-to-r from-yellow-400 to-yellow-500 text-white font-bold py-3 px-6 rounded-xl hover:from-yellow-500 hover:to-yellow-600 transition shadow-md flex items-center justify-center gap-2"> <span class="text-xl">🏆</span> <span class="text-lg">排行榜</span> </button> <button id="statsBtn" class="w-full bg-gradient-to-r from-purple-500 to-purple-600 text-white font-bold py-3 px-6 rounded-xl hover:from-purple-600 hover:to-purple-700 transition shadow-md flex items-center justify-center gap-2"> <span class="text-xl">📊</span> <span class="text-lg">個人統計</span> </button> <button id="tutorialBtn" class="w-full bg-gradient-to-r from-green-500 to-green-600 text-white font-bold py-3 px-6 rounded-xl hover:from-green-600 hover:to-green-700 transition shadow-md flex items-center justify-center gap-2"> <span class="text-xl">📖</span> <span class="text-lg">新手教學</span> </button>
+     </div><!-- 頁尾資訊 -->
+     <div class="mt-6 pt-4 border-t border-gray-200 text-xs text-gray-500">
+      <p>遊戲作者：小小一二</p>
+      <p>圖片來源：小紅書</p>
+     </div>
+    </div>
+   </div><!-- 個人統計畫面 -->
+   <div id="statsScreen" class="max-w-2xl w-full text-center" style="display: none;">
+    <div class="bg-white rounded-2xl p-8 shadow-2xl max-h-[90vh] overflow-y-auto">
+     <h1 class="text-4xl font-bold text-purple-600 mb-2">📊 個人統計</h1>
+     <div class="text-gray-600 mb-6">
+      <div class="flex items-center justify-center gap-3 mb-2">
+       <div id="statsPlayerAvatar" class="player-avatar"></div>
+       <div>
+        <div class="font-bold text-lg">
+         <span id="statsPlayerName"></span>
+        </div>
+        <div class="text-sm font-mono">
+         ID: <span id="statsPlayerId"></span>
+        </div>
+       </div>
+      </div>
+     </div><!-- 成就系統 -->
+     <div class="bg-gradient-to-r from-purple-100 to-pink-100 rounded-xl p-6 mb-6">
+      <h2 class="text-2xl font-bold text-purple-700 mb-4 flex items-center justify-center gap-2">🏅 成就徽章</h2>
+      <div id="achievementsContainer" class="flex flex-wrap justify-center gap-2"><!-- 成就會動態生成 -->
+      </div>
+      <div class="mt-4 text-sm text-gray-600">
+       已解鎖：<span id="achievementCount" class="font-bold text-purple-600">0</span> / <span id="totalAchievements">15</span>
+      </div>
+     </div><!-- 統計數據 -->
+     <div class="grid grid-cols-2 gap-4 mb-6">
+      <div class="bg-red-50 rounded-lg p-4">
+       <div class="text-red-600 text-sm mb-1">
+        🎅 4×4 遊玩次數
+       </div>
+       <div id="stats4x4Games" class="text-3xl font-bold text-red-700">
+        0
+       </div>
+      </div>
+      <div class="bg-blue-50 rounded-lg p-4">
+       <div class="text-blue-600 text-sm mb-1">
+        ⛄ 6×6 遊玩次數
+       </div>
+       <div id="stats6x6Games" class="text-3xl font-bold text-blue-700">
+        0
+       </div>
+      </div>
+      <div class="bg-yellow-50 rounded-lg p-4">
+       <div class="text-yellow-600 text-sm mb-1">
+        🏆 4×4 最高分
+       </div>
+       <div id="stats4x4Best" class="text-3xl font-bold text-yellow-700">
+        0
+       </div>
+      </div>
+      <div class="bg-green-50 rounded-lg p-4">
+       <div class="text-green-600 text-sm mb-1">
+        🏆 6×6 最高分
+       </div>
+       <div id="stats6x6Best" class="text-3xl font-bold text-green-700">
+        0
+       </div>
+      </div>
+      <div class="bg-purple-50 rounded-lg p-4">
+       <div class="text-purple-600 text-sm mb-1">
+        📈 總分數
+       </div>
+       <div id="statsTotalScore" class="text-3xl font-bold text-purple-700">
+        0
+       </div>
+      </div>
+      <div class="bg-pink-50 rounded-lg p-4">
+       <div class="text-pink-600 text-sm mb-1">
+        ⏱️ 總遊玩時間
+       </div>
+       <div id="statsTotalTime" class="text-3xl font-bold text-pink-700">
+        0分
+       </div>
+      </div>
+     </div><!-- 最近成績 -->
+     <div class="bg-gray-50 rounded-xl p-6">
+      <h2 class="text-2xl font-bold text-gray-700 mb-4">📜 最近成績</h2>
+      <div id="recentScores" class="space-y-3 max-h-64 overflow-y-auto"><!-- 最近成績會動態生成 -->
+      </div>
+     </div><button id="backToMenuFromStats" class="w-full bg-purple-600 text-white font-bold py-4 px-6 rounded-xl hover:bg-purple-700 transition text-lg mt-6"> 返回選單 </button>
+    </div>
+   </div><!-- 排行榜畫面 -->
+   <div id="leaderboardScreen" class="max-w-2xl w-full text-center" style="display: none;">
+    <div class="bg-white rounded-2xl p-8 shadow-2xl max-h-[90vh] overflow-y-auto">
+     <h1 class="text-4xl font-bold text-yellow-600 mb-6">🏆 全球排行榜</h1>
+     <div class="flex justify-center gap-4 mb-6"><button id="leaderboard4x4Tab" class="px-6 py-3 rounded-lg font-bold transition text-lg bg-red-600 text-white"> 🎅 4×4 模式 </button> <button id="leaderboard6x6Tab" class="px-6 py-3 rounded-lg font-bold transition text-lg bg-gray-300 text-gray-700"> ⛄ 6×6 模式 </button>
+     </div>
+     <div id="leaderboardContent" class="space-y-3"><!-- 排行榜內容會在這裡動態生成 -->
+     </div><button id="backToMenuFromLeaderboard" class="w-full bg-red-600 text-white font-bold py-4 px-6 rounded-xl hover:bg-red-700 transition text-lg mt-6"> 返回選單 </button>
+    </div>
+   </div><!-- 新手教學畫面 -->
+   <div id="tutorialScreen" class="max-w-md w-full text-center" style="display: none;">
+    <div class="bg-white rounded-2xl p-8 shadow-2xl max-h-[90vh] overflow-y-auto">
+     <h1 class="text-4xl font-bold text-red-700 mb-6">📖 新手教學</h1>
+     <div class="space-y-6 text-left">
+      <div class="bg-red-50 rounded-lg p-4">
+       <h3 class="text-xl font-bold text-red-700 mb-2 flex items-center">🎯 遊戲目標</h3>
+       <p class="text-gray-700">合併相同數字的方塊，目標是創造出更大的數字！終極挑戰是達到 2048 甚至更高！</p>
+      </div>
+      <div class="bg-blue-50 rounded-lg p-4">
+       <h3 class="text-xl font-bold text-blue-700 mb-2 flex items-center">🎮 操作方式</h3>
+       <div class="space-y-2 text-gray-700">
+        <p><strong>電腦：</strong>使用鍵盤方向鍵 ⬆️ ⬇️ ⬅️ ➡️</p>
+        <p><strong>手機：</strong>在遊戲格子上滑動 👆</p>
+       </div>
+      </div>
+      <div class="bg-green-50 rounded-lg p-4">
+       <h3 class="text-xl font-bold text-green-700 mb-2 flex items-center">📋 遊戲規則</h3>
+       <ul class="space-y-2 text-gray-700 list-disc list-inside">
+        <li>每次操作後會隨機出現新方塊</li>
+        <li>相同數字的方塊碰撞會合併</li>
+        <li>合併後數字會翻倍（2+2=4）</li>
+        <li>當無法移動時遊戲結束</li>
+       </ul>
+      </div>
+      <div class="bg-yellow-50 rounded-lg p-4">
+       <h3 class="text-xl font-bold text-yellow-700 mb-2 flex items-center">🎪 遊戲模式</h3>
+       <div class="space-y-2 text-gray-700">
+        <p><strong>🎅 4×4 模式：</strong>經典模式，適合新手</p>
+        <p><strong>⛄ 6×6 模式：</strong>進階挑戰，更多空間！</p>
+       </div>
+      </div>
+      <div class="bg-purple-50 rounded-lg p-4">
+       <h3 class="text-xl font-bold text-purple-700 mb-2 flex items-center">💡 遊戲技巧</h3>
+       <ul class="space-y-2 text-gray-700 list-disc list-inside">
+        <li>盡量把大數字集中在角落</li>
+        <li>保持方塊有序排列</li>
+        <li>不要隨意移動，要有計畫</li>
+        <li>預留空間給新方塊</li>
+       </ul>
+      </div>
+      <div class="bg-gray-50 rounded-lg p-4">
+       <h3 class="text-xl font-bold text-gray-700 mb-3 flex items-center">🎨 遊戲畫面</h3>
+       <div class="grid grid-cols-2 gap-2 text-sm">
+        <div class="bg-white p-3 rounded border-2 border-red-200">
+         <div class="text-2xl mb-1">
+          2️⃣
+         </div>
+         <p class="text-gray-600">起始方塊</p>
+        </div>
+        <div class="bg-white p-3 rounded border-2 border-blue-200">
+         <div class="text-2xl mb-1">
+          4️⃣
+         </div>
+         <p class="text-gray-600">合併方塊</p>
+        </div>
+        <div class="bg-white p-3 rounded border-2 border-green-200">
+         <div class="text-2xl mb-1">
+          8️⃣
+         </div>
+         <p class="text-gray-600">持續合併</p>
+        </div>
+        <div class="bg-white p-3 rounded border-2 border-yellow-200">
+         <div class="text-2xl mb-1">
+          🎯
+         </div>
+         <p class="text-gray-600">達成目標</p>
+        </div>
+       </div>
+      </div>
+      <div class="bg-indigo-50 rounded-lg p-4">
+       <h3 class="text-xl font-bold text-indigo-700 mb-2 flex items-center">🆔 玩家 ID 系統</h3>
+       <ul class="space-y-2 text-gray-700 list-disc list-inside">
+        <li>每個裝置都有唯一的玩家 ID</li>
+        <li>即使名字相同，ID 也不會重複</li>
+        <li>排行榜會顯示每位玩家的 ID</li>
+        <li>你的成績會標記「👈 你」方便辨識</li>
+       </ul>
+      </div>
+     </div><button id="backToMenuFromTutorial" class="w-full bg-red-600 text-white font-bold py-4 px-6 rounded-xl hover:bg-red-700 transition text-lg mt-6"> 返回選單 </button>
+    </div>
+   </div><!-- 遊戲結束畫面 -->
+   <div id="gameOverScreen" class="max-w-md w-full text-center" style="display: none;">
+    <div class="bg-white rounded-2xl p-8 shadow-2xl">
+     <h1 class="text-4xl font-bold text-red-700 mb-4">🎄 遊戲結束 🎄</h1>
+     <div class="bg-red-100 rounded-lg p-3 mb-4">
+      <div class="flex items-center justify-center gap-3">
+       <div id="finalPlayerAvatar" class="player-avatar"></div>
+       <div>
+        <div class="text-red-600 text-sm">
+         玩家
+        </div>
+        <div id="finalPlayerName" class="text-2xl font-bold text-red-700"></div>
+       </div>
+      </div>
+     </div>
+     <div id="newAchievementNotice" class="bg-gradient-to-r from-yellow-100 to-orange-100 rounded-lg p-4 mb-4" style="display: none;">
+      <div class="text-xl font-bold text-orange-600 mb-2">
+       🎉 解鎖新成就！
+      </div>
+      <div id="newAchievementsList" class="space-y-2"></div>
+     </div>
+     <div class="space-y-4 mb-6">
+      <div class="bg-gray-100 rounded-lg p-4">
+       <div class="text-gray-600 text-sm">
+        最終分數
+       </div>
+       <div id="finalScore" class="text-4xl font-bold text-red-700">
+        0
+       </div>
+      </div>
+      <div class="grid grid-cols-2 gap-3">
+       <div class="bg-blue-100 rounded-lg p-3">
+        <div class="text-blue-600 text-xs">
+         遊玩時間
+        </div>
+        <div id="finalPlayTime" class="text-xl font-bold text-blue-700">
+         00:00
+        </div>
+       </div>
+       <div class="bg-purple-100 rounded-lg p-3">
+        <div class="text-purple-600 text-xs">
+         結束時間
+        </div>
+        <div id="finalDateTime" class="text-xl font-bold text-purple-700">
+         00:00
+        </div>
+       </div>
+      </div>
+     </div>
+     <div id="savingIndicator" class="text-blue-600 mb-4" style="display: none;">
+      💾 正在儲存成績...
+     </div>
+     <div class="space-y-3"><button id="restartFromGameOver" class="w-full bg-red-600 text-white font-bold py-3 px-6 rounded-xl hover:bg-red-700 transition text-lg"> 🔄 重新開始 </button> <button id="viewStatsFromGameOver" class="w-full bg-purple-500 text-white font-bold py-3 px-6 rounded-xl hover:bg-purple-600 transition text-lg"> 📊 查看統計 </button> <button id="viewLeaderboardFromGameOver" class="w-full bg-yellow-500 text-white font-bold py-3 px-6 rounded-xl hover:bg-yellow-600 transition text-lg"> 🏆 查看排行榜 </button> <button id="backToMenuFromGameOver" class="w-full bg-gray-600 text-white font-bold py-3 px-6 rounded-xl hover:bg-gray-700 transition"> 📋 返回選單 </button>
+     </div>
+     <div class="mt-6 text-gray-500 text-xs">
+      <p>小小一二製作</p>
+      <p>圖片來源小紅書</p>
+     </div>
+    </div>
+   </div><!-- 遊戲畫面 -->
+   <div id="gameScreen" class="max-w-md w-full" style="display: none;">
+    <h1 id="gameTitle" class="text-4xl font-bold text-white text-center mb-2">布布一二聖誕節2048</h1>
+    <p id="instructions" class="text-white text-center mb-4">使用方向鍵或滑動移動方塊</p>
+    <div class="mb-4">
+     <div class="flex justify-between items-center mb-3">
+      <div class="flex gap-3">
+       <div class="score-container">
+        <div id="scoreLabel" class="score-label">
+         分數
+        </div>
+        <div id="score" class="score-value">
+         0
+        </div>
+       </div>
+       <div class="score-container">
+        <div id="bestScoreLabel" class="score-label">
+         最佳
+        </div>
+        <div id="bestScore" class="score-value">
+         0
+        </div>
+       </div>
+      </div>
+      <div class="flex gap-2"><button id="backToMenuBtn" class="bg-gray-600 text-white font-bold py-2 px-3 rounded-lg hover:bg-gray-700 transition text-sm"> ← 選單 </button> <button id="newGameBtn" class="bg-white text-red-700 font-bold py-2 px-4 rounded-lg hover:bg-gray-100 transition"> 重新開始 </button>
+      </div>
+     </div>
+    </div>
+    <div id="grid" class="grid-container grid-6x6"></div>
+    <div class="mt-4 text-white text-xs text-center opacity-75">
+     <p>小小一二製作 | 圖片來源小紅書</p>
+    </div>
+   </div>
+  </div>
+  <script>
+    const TILE_IMAGES = {
+      2: "https://i.ibb.co/nM6NTb8D/LINE-ALBUM-251213-1.jpg",
+      4: "https://i.ibb.co/DJHmQyM/LINE-ALBUM-251213-2.jpg",
+      8: "https://i.ibb.co/RkZfNmHz/LINE-ALBUM-251213-3.jpg",
+      16: "https://i.ibb.co/Tx63SwsF/LINE-ALBUM-251213-4.jpg",
+      32: "https://i.ibb.co/Vcqh3xwk/LINE-ALBUM-251213-5.jpg",
+      64: "https://i.ibb.co/fcFjVPp/LINE-ALBUM-251213-6.jpg",
+      128: "https://i.ibb.co/PpcMdxS/LINE-ALBUM-251213-7.jpg",
+      256: "https://i.ibb.co/Zpw1LW3M/LINE-ALBUM-251213-8.jpg",
+      512: "https://i.ibb.co/gbDpjq4q/LINE-ALBUM-251213-9.jpg",
+      1024: "https://i.ibb.co/TBM54DzW/LINE-ALBUM-251213-10.jpg",
+      2048: "https://i.ibb.co/5X7kB2G4/LINE-ALBUM-251213-11.jpg",
+      4096: "https://i.ibb.co/hFwWXG6F/LINE-ALBUM-251213-12.jpg",
+      8192: "https://i.ibb.co/5WCgBpmH/LINE-ALBUM-251213-13.jpg",
+      16384: "https://i.ibb.co/vxpW9Vw6/LINE-ALBUM-251213-14.jpg",
+      32768: "https://i.ibb.co/DPJjQHq8/LINE-ALBUM-251213-15.jpg",
+      65536: "https://i.ibb.co/tpB4bZFH/LINE-ALBUM-251213-16.jpg",
+      131072: "https://i.ibb.co/KpfxQsGH/LINE-ALBUM-251213-17.jpg",
+      262144: "https://i.ibb.co/B57kFX5G/LINE-ALBUM-251213-18.jpg",
+      524288: "https://i.ibb.co/JWLh1rR4/LINE-ALBUM-251213-19.jpg",
+      1048576: "https://i.ibb.co/pBdgbVhF/LINE-ALBUM-251213-20.jpg",
+      2097152: "https://i.ibb.co/tMQJv21c/LINE-ALBUM-251213-21.jpg",
+      4194304: "https://i.ibb.co/h11RFzJG/LINE-ALBUM-251213-22.jpg",
+      8388608: "https://i.ibb.co/PZ0Gnz24/LINE-ALBUM-251213-23.jpg",
+      16777216: "https://i.ibb.co/99fXBKqK/LINE-ALBUM-251213-24.jpg",
+      33554432: "https://i.ibb.co/tp2nQqBY/LINE-ALBUM-251213-25.jpg",
+      67108864: "https://i.ibb.co/hJwhmj4v/LINE-ALBUM-251213-26.jpg",
+      134217728: "https://i.ibb.co/ksdcysdr/LINE-ALBUM-251213-27.jpg",
+      268435456: "https://i.ibb.co/ZrNM3wY/LINE-ALBUM-251213-28.jpg",
+      536870912: "https://i.ibb.co/jv72m2zG/LINE-ALBUM-251213-29.jpg",
+      1073741824: "https://i.ibb.co/FbwZHxnB/LINE-ALBUM-251213-30.jpg",
+      2147483648: "https://i.ibb.co/HTf8xmt6/LINE-ALBUM-251213-31.jpg",
+      4294967296: "https://i.ibb.co/zDV9fdZ/LINE-ALBUM-251213-32.jpg",
+      8589934592: "https://i.ibb.co/tPKmNrcQ/LINE-ALBUM-251213-33.jpg",
+      17179869184: "https://i.ibb.co/HpbXBRcL/LINE-ALBUM-251213-34.jpg",
+      34359738368: "https://i.ibb.co/PZZygnMX/LINE-ALBUM-251213-35.jpg",
+      68719476736: "https://i.ibb.co/mVsfQwz5/LINE-ALBUM-251213-36.jpg"
+    };
+
+    // 可選擇的頭像（使用前12張圖片作為頭像選項）
+    const AVATAR_OPTIONS = [
+      "https://i.ibb.co/nM6NTb8D/LINE-ALBUM-251213-1.jpg",
+      "https://i.ibb.co/DJHmQyM/LINE-ALBUM-251213-2.jpg",
+      "https://i.ibb.co/RkZfNmHz/LINE-ALBUM-251213-3.jpg",
+      "https://i.ibb.co/Tx63SwsF/LINE-ALBUM-251213-4.jpg",
+      "https://i.ibb.co/Vcqh3xwk/LINE-ALBUM-251213-5.jpg",
+      "https://i.ibb.co/fcFjVPp/LINE-ALBUM-251213-6.jpg",
+      "https://i.ibb.co/PpcMdxS/LINE-ALBUM-251213-7.jpg",
+      "https://i.ibb.co/Zpw1LW3M/LINE-ALBUM-251213-8.jpg",
+      "https://i.ibb.co/gbDpjq4q/LINE-ALBUM-251213-9.jpg",
+      "https://i.ibb.co/TBM54DzW/LINE-ALBUM-251213-10.jpg",
+      "https://i.ibb.co/5X7kB2G4/LINE-ALBUM-251213-11.jpg",
+      "https://i.ibb.co/hFwWXG6F/LINE-ALBUM-251213-12.jpg"
+    ];
+
+    const ACHIEVEMENTS = [
+      { id: 'first_game', name: '初次體驗', desc: '完成第一場遊戲', icon: '🎮', check: (stats) => stats.totalGames >= 1 },
+      { id: 'score_500', name: '小試身手', desc: '單局達到 500 分', icon: '🌟', check: (stats) => stats.highestScore >= 500 },
+      { id: 'score_1000', name: '漸入佳境', desc: '單局達到 1000 分', icon: '⭐', check: (stats) => stats.highestScore >= 1000 },
+      { id: 'score_2000', name: '高手駕到', desc: '單局達到 2000 分', icon: '🌠', check: (stats) => stats.highestScore >= 2000 },
+      { id: 'score_5000', name: '大師級', desc: '單局達到 5000 分', icon: '💫', check: (stats) => stats.highestScore >= 5000 },
+      { id: 'games_10', name: '積極玩家', desc: '遊玩 10 場遊戲', icon: '🎯', check: (stats) => stats.totalGames >= 10 },
+      { id: 'games_50', name: '遊戲達人', desc: '遊玩 50 場遊戲', icon: '🎪', check: (stats) => stats.totalGames >= 50 },
+      { id: 'games_100', name: '狂熱愛好者', desc: '遊玩 100 場遊戲', icon: '🎊', check: (stats) => stats.totalGames >= 100 },
+      { id: 'tile_128', name: '初級合併', desc: '合成 128 方塊', icon: '🔷', check: (stats) => stats.highestTile >= 128 },
+      { id: 'tile_512', name: '中級合併', desc: '合成 512 方塊', icon: '🔶', check: (stats) => stats.highestTile >= 512 },
+      { id: 'tile_2048', name: '2048達成！', desc: '合成 2048 方塊', icon: '🏆', check: (stats) => stats.highestTile >= 2048 },
+      { id: 'both_modes', name: '全能玩家', desc: '兩種模式都玩過', icon: '🎭', check: (stats) => stats.games4x4 > 0 && stats.games6x6 > 0 },
+      { id: 'time_1hour', name: '時間投入', desc: '總遊玩時間 1 小時', icon: '⏰', check: (stats) => stats.totalTime >= 3600 },
+      { id: 'total_score_10k', name: '分數累積', desc: '總分數達到 10000', icon: '💰', check: (stats) => stats.totalScore >= 10000 },
+      { id: 'total_score_50k', name: '分數大師', desc: '總分數達到 50000', icon: '💎', check: (stats) => stats.totalScore >= 50000 }
+    ];
+
+    const defaultConfig = {
+      game_title: "布布一二聖誕小遊戲",
+      instructions_text: "使用方向鍵或滑動移動方塊",
+      new_game_button: "開始新遊戲",
+      score_label: "分數",
+      best_score_label: "最佳",
+      background_color: "#722f37"
+    };
+
+    let GRID_SIZE = 6;
+    let grid = [];
+    let score = 0;
+    let bestScore = 0;
+    let currentMode = '6x6';
+    let gameStartTime = null;
+    let playTimeInterval = null;
+    let dateTimeInterval = null;
+    let playerName = '';
+    let playerId = '';
+    let playerAvatar = '';
+    let imagesLoaded = 0;
+    let totalImages = Object.keys(TILE_IMAGES).length;
+    let leaderboardData = [];
+    let currentLeaderboardMode = '4x4';
+    let unlockedAchievements = [];
+    let savedGameState = null;
+
+    // 生成或獲取玩家 ID
+    function getOrCreatePlayerId() {
+      try {
+        let id = localStorage.getItem('2048-christmas-player-id');
+        if (!id) {
+          const chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';
+          id = '#';
+          for (let i = 0; i < 6; i++) {
+            id += chars.charAt(Math.floor(Math.random() * chars.length));
+          }
+          localStorage.setItem('2048-christmas-player-id', id);
+        }
+        return id;
+      } catch (error) {
+        console.error('無法存取 localStorage:', error);
+        const chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';
+        let tempId = '#TEMP';
+        for (let i = 0; i < 4; i++) {
+          tempId += chars.charAt(Math.floor(Math.random() * chars.length));
+        }
+        return tempId;
+      }
+    }
+
+    function renderAvatarSelection() {
+      const container = document.getElementById('avatarSelection');
+      container.innerHTML = AVATAR_OPTIONS.map((url, index) => {
+        const selected = playerAvatar === url ? 'selected' : '';
+        return `<div class="avatar-option ${selected}" data-avatar="${url}" style="background-image: url('${url}')"></div>`;
+      }).join('');
+
+      // 如果沒有選擇頭像，預設選第一個
+      if (!playerAvatar) {
+        playerAvatar = AVATAR_OPTIONS[0];
+        container.querySelector('.avatar-option').classList.add('selected');
+      }
+
+      // 添加點擊事件
+      container.querySelectorAll('.avatar-option').forEach(option => {
+        option.addEventListener('click', () => {
+          container.querySelectorAll('.avatar-option').forEach(opt => opt.classList.remove('selected'));
+          option.classList.add('selected');
+          playerAvatar = option.getAttribute('data-avatar');
+        });
+      });
+    }
+
+    function updatePlayerAvatar() {
+      // 更新所有顯示頭像的地方
+      const avatarElements = [
+        document.getElementById('displayPlayerAvatar'),
+        document.getElementById('statsPlayerAvatar'),
+        document.getElementById('finalPlayerAvatar')
+      ];
+
+      avatarElements.forEach(element => {
+        if (element && playerAvatar) {
+          element.style.backgroundImage = `url('${playerAvatar}')`;
+        }
+      });
+    }
+
+    function calculateStats() {
+      const myRecords = leaderboardData.filter(r => r.player_id === playerId);
+      
+      const games4x4 = myRecords.filter(r => r.game_mode === '4x4').length;
+      const games6x6 = myRecords.filter(r => r.game_mode === '6x6').length;
+      
+      const best4x4 = Math.max(0, ...myRecords.filter(r => r.game_mode === '4x4').map(r => r.score));
+      const best6x6 = Math.max(0, ...myRecords.filter(r => r.game_mode === '6x6').map(r => r.score));
+      
+      const totalScore = myRecords.reduce((sum, r) => sum + r.score, 0);
+      const totalTime = myRecords.reduce((sum, r) => sum + r.play_time_seconds, 0);
+      
+      const highestScore = Math.max(0, ...myRecords.map(r => r.score));
+      const highestTile = Math.max(0, ...myRecords.map(r => r.highest_tile || 0));
+      
+      return {
+        totalGames: myRecords.length,
+        games4x4,
+        games6x6,
+        best4x4,
+        best6x6,
+        totalScore,
+        totalTime,
+        highestScore,
+        highestTile
+      };
+    }
+
+    function checkAchievements() {
+      const stats = calculateStats();
+      const newUnlocked = [];
+      
+      ACHIEVEMENTS.forEach(achievement => {
+        if (achievement.check(stats) && !unlockedAchievements.includes(achievement.id)) {
+          unlockedAchievements.push(achievement.id);
+          newUnlocked.push(achievement);
+        }
+      });
+      
+      try {
+        localStorage.setItem('2048-christmas-achievements', JSON.stringify(unlockedAchievements));
+      } catch (e) {
+        console.error('無法儲存成就:', e);
+      }
+      
+      return newUnlocked;
+    }
+
+    function loadAchievements() {
+      try {
+        const saved = localStorage.getItem('2048-christmas-achievements');
+        if (saved) {
+          unlockedAchievements = JSON.parse(saved);
+        }
+      } catch (e) {
+        console.error('無法載入成就:', e);
+      }
+    }
+
+    function renderStats() {
+      const stats = calculateStats();
+      
+      document.getElementById('statsPlayerName').textContent = playerName;
+      document.getElementById('statsPlayerId').textContent = playerId;
+      
+      document.getElementById('stats4x4Games').textContent = stats.games4x4;
+      document.getElementById('stats6x6Games').textContent = stats.games6x6;
+      document.getElementById('stats4x4Best').textContent = stats.best4x4.toLocaleString();
+      document.getElementById('stats6x6Best').textContent = stats.best6x6.toLocaleString();
+      document.getElementById('statsTotalScore').textContent = stats.totalScore.toLocaleString();
+      document.getElementById('statsTotalTime').textContent = Math.floor(stats.totalTime / 60) + '分';
+      
+      // 渲染成就
+      const achievementsContainer = document.getElementById('achievementsContainer');
+      achievementsContainer.innerHTML = ACHIEVEMENTS.map(achievement => {
+        const unlocked = unlockedAchievements.includes(achievement.id);
+        return `
+          <div class="achievement-badge ${unlocked ? 'achievement-unlocked' : 'achievement-locked'}" title="${achievement.desc}">
+            ${achievement.icon} ${unlocked ? achievement.name : '???'}
+          </div>
+        `;
+      }).join('');
+      
+      document.getElementById('achievementCount').textContent = unlockedAchievements.length;
+      document.getElementById('totalAchievements').textContent = ACHIEVEMENTS.length;
+      
+      // 渲染最近成績
+      const myRecords = leaderboardData
+        .filter(r => r.player_id === playerId)
+        .sort((a, b) => new Date(b.completed_at) - new Date(a.completed_at))
+        .slice(0, 10);
+      
+      const recentScores = document.getElementById('recentScores');
+      if (myRecords.length === 0) {
+        recentScores.innerHTML = '<div class="text-center text-gray-500 py-4">還沒有遊戲記錄</div>';
+      } else {
+        recentScores.innerHTML = myRecords.map(record => {
+          const date = new Date(record.completed_at);
+          const dateStr = `${date.getMonth() + 1}/${date.getDate()} ${String(date.getHours()).padStart(2, '0')}:${String(date.getMinutes()).padStart(2, '0')}`;
+          const timeStr = `${Math.floor(record.play_time_seconds / 60)}分${record.play_time_seconds % 60}秒`;
+          const modeIcon = record.game_mode === '4x4' ? '🎅' : '⛄';
+          
+          return `
+            <div class="bg-white border-2 border-gray-200 rounded-lg p-3 flex justify-between items-center">
+              <div class="text-left">
+                <div class="font-bold text-gray-800">${modeIcon} ${record.game_mode} - ${record.score.toLocaleString()} 分</div>
+                <div class="text-xs text-gray-500">${dateStr} · ${timeStr}</div>
+              </div>
+              <button class="delete-score-btn bg-red-500 text-white px-3 py-1 rounded hover:bg-red-600 transition text-xs" data-record-id="${record.__backendId}">
+                🗑️
+              </button>
+            </div>
+          `;
+        }).join('');
+        
+        // 加入刪除按鈕事件
+        const deleteButtons = recentScores.querySelectorAll('.delete-score-btn');
+        deleteButtons.forEach(button => {
+          button.addEventListener('click', async (e) => {
+            const recordId = e.target.getAttribute('data-record-id');
+            const record = leaderboardData.find(r => r.__backendId === recordId);
+            
+            if (record && window.dataSdk) {
+              button.textContent = '確認？';
+              button.classList.add('bg-yellow-500');
+              
+              const confirmHandler = async () => {
+                button.disabled = true;
+                button.textContent = '刪除中';
+                
+                const result = await window.dataSdk.delete(record);
+                
+                if (result.isError) {
+                  button.textContent = '失敗';
+                  setTimeout(() => renderStats(), 1500);
+                }
+              };
+              
+              button.addEventListener('click', confirmHandler, { once: true });
+              
+              setTimeout(() => {
+                if (!button.disabled) {
+                  button.textContent = '🗑️';
+                  button.classList.remove('bg-yellow-500');
+                }
+              }, 3000);
+            }
+          });
+        });
+      }
+    }
+
+    function showStats() {
+      document.getElementById('statsScreen').style.display = 'block';
+      document.getElementById('mainMenu').style.display = 'none';
+      document.getElementById('gameScreen').style.display = 'none';
+      document.getElementById('gameOverScreen').style.display = 'none';
+      document.getElementById('leaderboardScreen').style.display = 'none';
+      document.getElementById('tutorialScreen').style.display = 'none';
+      updatePlayerAvatar();
+      renderStats();
+    }
+
+    // Data SDK Handler
+    const dataHandler = {
+      onDataChanged(data) {
+        leaderboardData = data;
+        if (document.getElementById('leaderboardScreen').style.display === 'block') {
+          renderLeaderboard();
+        }
+        if (document.getElementById('statsScreen').style.display === 'block') {
+          renderStats();
+        }
+      }
+    };
+
+    function preloadImages() {
+      return new Promise((resolve) => {
+        if (totalImages === 0) {
+          resolve();
+          return;
+        }
+
+        Object.values(TILE_IMAGES).forEach(url => {
+          const img = new Image();
+          img.onload = img.onerror = () => {
+            imagesLoaded++;
+            if (imagesLoaded === totalImages) {
+              resolve();
+            }
+          };
+          img.src = url;
+        });
+
+        setTimeout(() => {
+          resolve();
+        }, 5000);
+      });
+    }
+
+    function updatePlayTime() {
+      if (gameStartTime) {
+        const elapsed = Math.floor((Date.now() - gameStartTime) / 1000);
+        const minutes = Math.floor(elapsed / 60);
+        const seconds = elapsed % 60;
+        document.getElementById('playTime').textContent = 
+          `${String(minutes).padStart(2, '0')}:${String(seconds).padStart(2, '0')}`;
+      }
+    }
+    
+    function updateDateTime() {
+      const now = new Date();
+      const year = now.getFullYear();
+      const month = String(now.getMonth() + 1).padStart(2, '0');
+      const day = String(now.getDate()).padStart(2, '0');
+      const hours = String(now.getHours()).padStart(2, '0');
+      const minutes = String(now.getMinutes()).padStart(2, '0');
+      const seconds = String(now.getSeconds()).padStart(2, '0');
+      document.getElementById('currentDateTime').textContent = 
+        `${year}/${month}/${day} ${hours}:${minutes}:${seconds}`;
+    }
+    
+    function startTimers() {
+      gameStartTime = Date.now();
+      updatePlayTime();
+      updateDateTime();
+      
+      if (playTimeInterval) clearInterval(playTimeInterval);
+      if (dateTimeInterval) clearInterval(dateTimeInterval);
+      
+      playTimeInterval = setInterval(updatePlayTime, 1000);
+      dateTimeInterval = setInterval(updateDateTime, 1000);
+    }
+    
+    function stopTimers() {
+      if (playTimeInterval) {
+        clearInterval(playTimeInterval);
+        playTimeInterval = null;
+      }
+      if (dateTimeInterval) {
+        clearInterval(dateTimeInterval);
+        dateTimeInterval = null;
+      }
+    }
+
+    function saveGameState() {
+      try {
+        const gameState = {
+          grid: grid,
+          score: score,
+          bestScore: bestScore,
+          currentMode: currentMode,
+          gridSize: GRID_SIZE,
+          gameStartTime: gameStartTime,
+          timestamp: Date.now()
+        };
+        localStorage.setItem('2048-christmas-game-state', JSON.stringify(gameState));
+      } catch (e) {
+        console.error('無法儲存遊戲狀態:', e);
+      }
+    }
+
+    function loadGameState() {
+      try {
+        const saved = localStorage.getItem('2048-christmas-game-state');
+        if (saved) {
+          return JSON.parse(saved);
+        }
+      } catch (e) {
+        console.error('無法載入遊戲狀態:', e);
+      }
+      return null;
+    }
+
+    function clearGameState() {
+      try {
+        localStorage.removeItem('2048-christmas-game-state');
+      } catch (e) {
+        console.error('無法清除遊戲狀態:', e);
+      }
+    }
+
+    function hasSavedGame() {
+      const saved = loadGameState();
+      return saved !== null && saved.grid && saved.grid.length > 0;
+    }
+
+    function getHighestTile() {
+      let highest = 0;
+      for (let i = 0; i < GRID_SIZE; i++) {
+        for (let j = 0; j < GRID_SIZE; j++) {
+          if (grid[i][j] > highest) {
+            highest = grid[i][j];
+          }
+        }
+      }
+      return highest;
+    }
+
+    function initGame(mode, restoreState = false) {
+      if (restoreState && savedGameState) {
+        grid = savedGameState.grid;
+        score = savedGameState.score;
+        bestScore = savedGameState.bestScore;
+        currentMode = savedGameState.currentMode;
+        GRID_SIZE = savedGameState.gridSize;
+        
+        const elapsed = Math.floor((Date.now() - savedGameState.gameStartTime) / 1000);
+        gameStartTime = Date.now() - (elapsed * 1000);
+      } else {
+        if (mode) {
+          currentMode = mode;
+          GRID_SIZE = mode === '4x4' ? 4 : 6;
+        }
+        bestScore = parseInt(localStorage.getItem(`2048-christmas-best-score-${currentMode}`) || '0');
+        
+        grid = [];
+        for (let i = 0; i < GRID_SIZE; i++) {
+          grid.push(new Array(GRID_SIZE).fill(0));
+        }
+        score = 0;
+        
+        const initialTiles = GRID_SIZE === 4 ? 2 : 3;
+        for (let i = 0; i < initialTiles; i++) {
+          addRandomTile();
+        }
+      }
+      
+      updateDisplay();
+      startTimers();
+    }
+    
+    function showMainMenu() {
+      saveGameState();
+      
+      document.getElementById('mainMenu').style.display = 'block';
+      document.getElementById('gameScreen').style.display = 'none';
+      document.getElementById('gameOverScreen').style.display = 'none';
+      document.getElementById('nameInputScreen').style.display = 'none';
+      document.getElementById('tutorialScreen').style.display = 'none';
+      document.getElementById('leaderboardScreen').style.display = 'none';
+      document.getElementById('statsScreen').style.display = 'none';
+      document.getElementById('displayPlayerName').textContent = playerName;
+      document.getElementById('displayPlayerId').textContent = playerId;
+      
+      updatePlayerAvatar();
+      
+      // 檢查是否有儲存的遊戲
+      if (hasSavedGame()) {
+        document.getElementById('continueGameBtn').style.display = 'flex';
+      } else {
+        document.getElementById('continueGameBtn').style.display = 'none';
+      }
+      
+      stopTimers();
+    }
+    
+    function showLeaderboard() {
+      document.getElementById('leaderboardScreen').style.display = 'block';
+      document.getElementById('mainMenu').style.display = 'none';
+      document.getElementById('gameScreen').style.display = 'none';
+      document.getElementById('gameOverScreen').style.display = 'none';
+      document.getElementById('nameInputScreen').style.display = 'none';
+      document.getElementById('tutorialScreen').style.display = 'none';
+      document.getElementById('statsScreen').style.display = 'none';
+      renderLeaderboard();
+    }
+    
+    function showTutorial() {
+      document.getElementById('tutorialScreen').style.display = 'block';
+      document.getElementById('mainMenu').style.display = 'none';
+      document.getElementById('gameScreen').style.display = 'none';
+      document.getElementById('gameOverScreen').style.display = 'none';
+      document.getElementById('nameInputScreen').style.display = 'none';
+      document.getElementById('leaderboardScreen').style.display = 'none';
+      document.getElementById('statsScreen').style.display = 'none';
+    }
+    
+    function showNameInput() {
+      document.getElementById('nameInputScreen').style.display = 'block';
+      document.getElementById('mainMenu').style.display = 'none';
+      document.getElementById('gameScreen').style.display = 'none';
+      document.getElementById('gameOverScreen').style.display = 'none';
+      document.getElementById('leaderboardScreen').style.display = 'none';
+      document.getElementById('statsScreen').style.display = 'none';
+      renderAvatarSelection();
+    }
+    
+    function startGame(mode, continueGame = false) {
+      document.getElementById('mainMenu').style.display = 'none';
+      document.getElementById('gameScreen').style.display = 'block';
+      
+      if (continueGame) {
+        savedGameState = loadGameState();
+        initGame(null, true);
+      } else {
+        clearGameState();
+        initGame(mode);
+      }
+    }
+
+    function renderLeaderboard() {
+      const content = document.getElementById('leaderboardContent');
+      const filtered = leaderboardData
+        .filter(record => record.game_mode === currentLeaderboardMode)
+        .sort((a, b) => b.score - a.score)
+        .slice(0, 10);
+
+      if (filtered.length === 0) {
+        content.innerHTML = `
+          <div class="text-center text-gray-500 py-8">
+            <p class="text-xl">🎮</p>
+            <p class="mt-2">還沒有任何記錄</p>
+            <p class="text-sm mt-1">快來創造第一筆紀錄吧！</p>
+          </div>
+        `;
+        return;
+      }
+
+      const medals = ['🥇', '🥈', '🥉'];
+      content.innerHTML = filtered.map((record, index) => {
+        const medal = index < 3 ? medals[index] : `${index + 1}.`;
+        const date = new Date(record.completed_at);
+        const dateStr = `${date.getMonth() + 1}/${date.getDate()} ${String(date.getHours()).padStart(2, '0')}:${String(date.getMinutes()).padStart(2, '0')}`;
+        const timeStr = `${Math.floor(record.play_time_seconds / 60)}:${String(record.play_time_seconds % 60).padStart(2, '0')}`;
+        
+        const bgColor = index === 0 ? 'bg-yellow-50 border-yellow-300' : 
+                       index === 1 ? 'bg-gray-50 border-gray-300' : 
+                       index === 2 ? 'bg-orange-50 border-orange-300' : 
+                       'bg-white border-gray-200';
+        
+        const isCurrentPlayer = record.player_id === playerId;
+        const highlightClass = isCurrentPlayer ? 'ring-2 ring-blue-400' : '';
+        
+        const avatarStyle = record.player_avatar ? `background-image: url('${record.player_avatar}')` : '';
+        
+        return `
+          <div class="border-2 ${bgColor} ${highlightClass} rounded-lg p-4">
+            <div class="flex items-center justify-between">
+              <div class="flex items-center gap-3 flex-1">
+                <div class="text-2xl font-bold w-12">${medal}</div>
+                <div class="w-12 h-12 rounded-lg bg-gray-200" style="${avatarStyle}; background-size: cover; background-position: center;"></div>
+                <div class="text-left flex-1">
+                  <div class="font-bold text-lg text-gray-800">
+                    ${record.player_name}
+                    ${isCurrentPlayer ? '<span class="text-blue-600 text-sm ml-2">👈 你</span>' : ''}
+                  </div>
+                  <div class="text-xs text-gray-500 font-mono">${record.player_id}</div>
+                </div>
+              </div>
+              <div class="text-right flex items-center gap-2">
+                <div>
+                  <div class="text-2xl font-bold text-red-600">${record.score}</div>
+                  <div class="text-xs text-gray-500">分數</div>
+                </div>
+                ${isCurrentPlayer ? `<button class="delete-record-btn bg-red-500 text-white px-3 py-2 rounded-lg hover:bg-red-600 transition text-xs" data-record-id="${record.__backendId}">🗑️ 刪除</button>` : ''}
+              </div>
+            </div>
+          </div>
+        `;
+      }).join('');
+      
+      const deleteButtons = content.querySelectorAll('.delete-record-btn');
+      deleteButtons.forEach(button => {
+        button.addEventListener('click', async (e) => {
+          const recordId = e.target.getAttribute('data-record-id');
+          const record = leaderboardData.find(r => r.__backendId === recordId);
+          
+          if (record && window.dataSdk) {
+            button.textContent = '確認刪除？';
+            button.classList.add('bg-yellow-500');
+            button.classList.remove('bg-red-500');
+            
+            const cancelBtn = document.createElement('button');
+            cancelBtn.textContent = '✖ 取消';
+            cancelBtn.className = 'bg-gray-500 text-white px-3 py-2 rounded-lg hover:bg-gray-600 transition text-xs ml-2';
+            button.parentElement.appendChild(cancelBtn);
+            
+            cancelBtn.addEventListener('click', () => {
+              renderLeaderboard();
+            });
+            
+            const confirmHandler = async () => {
+              button.disabled = true;
+              button.textContent = '刪除中...';
+              
+              const result = await window.dataSdk.delete(record);
+              
+              if (result.isError) {
+                button.textContent = '刪除失敗';
+                button.classList.add('bg-red-700');
+                setTimeout(() => renderLeaderboard(), 2000);
+              }
+            };
+            
+            button.removeEventListener('click', confirmHandler);
+            button.addEventListener('click', confirmHandler, { once: true });
+          }
+        });
+      });
+    }
+
+    function addRandomTile() {
+      const emptyCells = [];
+      for (let i = 0; i < GRID_SIZE; i++) {
+        for (let j = 0; j < GRID_SIZE; j++) {
+          if (grid[i][j] === 0) {
+            emptyCells.push({row: i, col: j});
+          }
+        }
+      }
+      if (emptyCells.length > 0) {
+        const cell = emptyCells[Math.floor(Math.random() * emptyCells.length)];
+        grid[cell.row][cell.col] = Math.random() < 0.9 ? 2 : 4;
+      }
+    }
+
+    function updateDisplay() {
+      const config = window.elementSdk ? window.elementSdk.config : defaultConfig;
+      const gridElement = document.getElementById('grid');
+      gridElement.innerHTML = '';
+      gridElement.className = `grid-container grid-${GRID_SIZE}x${GRID_SIZE}`;
+      
+      for (let i = 0; i < GRID_SIZE; i++) {
+        for (let j = 0; j < GRID_SIZE; j++) {
+          const cell = document.createElement('div');
+          cell.className = 'grid-cell';
+          
+          const value = grid[i][j];
+          if (value !== 0) {
+            const tile = document.createElement('div');
+            tile.className = 'tile tile-new';
+            
+            const imageUrl = TILE_IMAGES[value];
+            if (imageUrl) {
+              tile.style.backgroundImage = `url('${imageUrl}')`;
+              tile.style.backgroundColor = '#3c3a32';
+            } else {
+              const colors = {
+                2: '#eee4da', 4: '#ede0c8', 8: '#f2b179', 16: '#f59563',
+                32: '#f67c5f', 64: '#f65e3b', 128: '#edcf72', 256: '#edcc61',
+                512: '#edc850', 1024: '#edc53f', 2048: '#edc22e'
+              };
+              tile.style.backgroundColor = colors[value] || '#3c3a32';
+            }
+            
+            const number = document.createElement('div');
+            number.className = `tile-number tile-number-${value}`;
+            number.textContent = value >= 1000000 ? (value / 1000000).toFixed(0) + 'M' : 
+                                 value >= 1000 ? (value / 1000).toFixed(0) + 'K' : value;
+            tile.appendChild(number);
+            
+            cell.appendChild(tile);
+          }
+          
+          gridElement.appendChild(cell);
+        }
+      }
+      
+      document.getElementById('score').textContent = score;
+      document.getElementById('bestScore').textContent = bestScore;
+    }
+
+    function checkGameOver() {
+      for (let i = 0; i < GRID_SIZE; i++) {
+        for (let j = 0; j < GRID_SIZE; j++) {
+          if (grid[i][j] === 0) return false;
+        }
+      }
+      
+      for (let i = 0; i < GRID_SIZE; i++) {
+        for (let j = 0; j < GRID_SIZE; j++) {
+          const current = grid[i][j];
+          if (j < GRID_SIZE - 1 && grid[i][j + 1] === current) return false;
+          if (i < GRID_SIZE - 1 && grid[i + 1][j] === current) return false;
+        }
+      }
+      
+      return true;
+    }
+    
+    async function showGameOver() {
+      stopTimers();
+      clearGameState();
+      
+      const elapsed = Math.floor((Date.now() - gameStartTime) / 1000);
+      const minutes = Math.floor(elapsed / 60);
+      const seconds = elapsed % 60;
+      const playTimeText = `${String(minutes).padStart(2, '0')}:${String(seconds).padStart(2, '0')}`;
+      
+      const now = new Date();
+      const hours = String(now.getHours()).padStart(2, '0');
+      const minutes2 = String(now.getMinutes()).padStart(2, '0');
+      const dateTimeText = `${hours}:${minutes2}`;
+      
+      const highestTile = getHighestTile();
+      
+      document.getElementById('finalPlayerName').textContent = playerName;
+      document.getElementById('finalScore').textContent = score;
+      document.getElementById('finalPlayTime').textContent = playTimeText;
+      document.getElementById('finalDateTime').textContent = dateTimeText;
+      
+      updatePlayerAvatar();
+      
+      document.getElementById('gameScreen').style.display = 'none';
+      document.getElementById('gameOverScreen').style.display = 'block';
+
+      if (window.dataSdk && leaderboardData.length < 999) {
+        document.getElementById('savingIndicator').style.display = 'block';
+        
+        const result = await window.dataSdk.create({
+          player_name: playerName,
+          player_id: playerId,
+          player_avatar: playerAvatar,
+          score: score,
+          play_time_seconds: elapsed,
+          game_mode: currentMode,
+          highest_tile: highestTile,
+          completed_at: new Date().toISOString()
+        });
+
+        document.getElementById('savingIndicator').style.display = 'none';
+        
+        if (result.isError) {
+          console.error('Failed to save score:', result.error);
+        } else {
+          // 檢查新成就
+          const newAchievements = checkAchievements();
+          if (newAchievements.length > 0) {
+            const notice = document.getElementById('newAchievementNotice');
+            const list = document.getElementById('newAchievementsList');
+            list.innerHTML = newAchievements.map(a => 
+              `<div class="achievement-badge achievement-unlocked">${a.icon} ${a.name} - ${a.desc}</div>`
+            ).join('');
+            notice.style.display = 'block';
+          }
+        }
+      }
+    }
+
+    function move(direction) {
+      let moved = false;
+      const oldGrid = JSON.stringify(grid);
+      
+      if (direction === 'left') {
+        for (let i = 0; i < GRID_SIZE; i++) {
+          const row = grid[i].filter(val => val !== 0);
+          for (let j = 0; j < row.length - 1; j++) {
+            if (row[j] === row[j + 1]) {
+              row[j] *= 2;
+              score += row[j];
+              row.splice(j + 1, 1);
+            }
+          }
+          while (row.length < GRID_SIZE) row.push(0);
+          grid[i] = row;
+        }
+      } else if (direction === 'right') {
+        for (let i = 0; i < GRID_SIZE; i++) {
+          const row = grid[i].filter(val => val !== 0);
+          for (let j = row.length - 1; j > 0; j--) {
+            if (row[j] === row[j - 1]) {
+              row[j] *= 2;
+              score += row[j];
+              row.splice(j - 1, 1);
+              j--;
+            }
+          }
+          while (row.length < GRID_SIZE) row.unshift(0);
+          grid[i] = row;
+        }
+      } else if (direction === 'up') {
+        for (let j = 0; j < GRID_SIZE; j++) {
+          const col = [];
+          for (let i = 0; i < GRID_SIZE; i++) {
+            if (grid[i][j] !== 0) col.push(grid[i][j]);
+          }
+          for (let i = 0; i < col.length - 1; i++) {
+            if (col[i] === col[i + 1]) {
+              col[i] *= 2;
+              score += col[i];
+              col.splice(i + 1, 1);
+            }
+          }
+          while (col.length < GRID_SIZE) col.push(0);
+          for (let i = 0; i < GRID_SIZE; i++) grid[i][j] = col[i];
+        }
+      } else if (direction === 'down') {
+        for (let j = 0; j < GRID_SIZE; j++) {
+          const col = [];
+          for (let i = 0; i < GRID_SIZE; i++) {
+            if (grid[i][j] !== 0) col.push(grid[i][j]);
+          }
+          for (let i = col.length - 1; i > 0; i--) {
+            if (col[i] === col[i - 1]) {
+              col[i] *= 2;
+              score += col[i];
+              col.splice(i - 1, 1);
+              i--;
+            }
+          }
+          while (col.length < GRID_SIZE) col.unshift(0);
+          for (let i = 0; i < GRID_SIZE; i++) grid[i][j] = col[i];
+        }
+      }
+      
+      moved = oldGrid !== JSON.stringify(grid);
+      
+      if (moved) {
+        addRandomTile();
+        if (score > bestScore) {
+          bestScore = score;
+          localStorage.setItem(`2048-christmas-best-score-${currentMode}`, bestScore.toString());
+        }
+        updateDisplay();
+        saveGameState();
+        
+        if (checkGameOver()) {
+          showGameOver();
+        }
+      }
+    }
+
+    document.addEventListener('keydown', (e) => {
+      if (document.getElementById('gameScreen').style.display !== 'block') return;
+      
+      if (e.key === 'ArrowLeft') {
+        e.preventDefault();
+        move('left');
+      } else if (e.key === 'ArrowRight') {
+        e.preventDefault();
+        move('right');
+      } else if (e.key === 'ArrowUp') {
+        e.preventDefault();
+        move('up');
+      } else if (e.key === 'ArrowDown') {
+        e.preventDefault();
+        move('down');
+      }
+    });
+
+    let touchStartX = 0;
+    let touchStartY = 0;
+    let touchEndX = 0;
+    let touchEndY = 0;
+
+    const gridElement = document.getElementById('grid');
+
+    gridElement.addEventListener('touchstart', (e) => {
+      touchStartX = e.changedTouches[0].screenX;
+      touchStartY = e.changedTouches[0].screenY;
+      e.preventDefault();
+    }, { passive: false });
+
+    gridElement.addEventListener('touchmove', (e) => {
+      e.preventDefault();
+    }, { passive: false });
+
+    gridElement.addEventListener('touchend', (e) => {
+      touchEndX = e.changedTouches[0].screenX;
+      touchEndY = e.changedTouches[0].screenY;
+      handleSwipe();
+      e.preventDefault();
+    }, { passive: false });
+
+    let mouseStartX = 0;
+    let mouseStartY = 0;
+    let isDragging = false;
+
+    gridElement.addEventListener('mousedown', (e) => {
+      isDragging = true;
+      mouseStartX = e.screenX;
+      mouseStartY = e.screenY;
+    });
+
+    gridElement.addEventListener('mouseup', (e) => {
+      if (isDragging) {
+        touchStartX = mouseStartX;
+        touchStartY = mouseStartY;
+        touchEndX = e.screenX;
+        touchEndY = e.screenY;
+        handleSwipe();
+        isDragging = false;
+      }
+    });
+
+    gridElement.addEventListener('mouseleave', () => {
+      isDragging = false;
+    });
+
+    function handleSwipe() {
+      const deltaX = touchEndX - touchStartX;
+      const deltaY = touchEndY - touchStartY;
+      const minSwipeDistance = 30;
+
+      if (Math.abs(deltaX) < minSwipeDistance && Math.abs(deltaY) < minSwipeDistance) {
+        return;
+      }
+
+      if (Math.abs(deltaX) > Math.abs(deltaY)) {
+        if (deltaX > 0) {
+          move('right');
+        } else {
+          move('left');
+        }
+      } else {
+        if (deltaY > 0) {
+          move('down');
+        } else {
+          move('up');
+        }
+      }
+    }
+
+    document.getElementById('nameForm').addEventListener('submit', (e) => {
+      e.preventDefault();
+      const nameInput = document.getElementById('playerNameInput');
+      playerName = nameInput.value.trim();
+      if (playerName && playerAvatar) {
+        localStorage.setItem('2048-christmas-player-name', playerName);
+        localStorage.setItem('2048-christmas-player-avatar', playerAvatar);
+        showMainMenu();
+      }
+    });
+    
+    document.getElementById('changeNameBtn').addEventListener('click', () => {
+      showNameInput();
+      document.getElementById('playerNameInput').value = playerName;
+    });
+
+    document.getElementById('continueGameBtn').addEventListener('click', () => {
+      startGame(null, true);
+    });
+    
+    document.getElementById('play4x4Btn').addEventListener('click', () => {
+      startGame('4x4');
+    });
+    
+    document.getElementById('play6x6Btn').addEventListener('click', () => {
+      startGame('6x6');
+    });
+    
+    document.getElementById('leaderboardBtn').addEventListener('click', () => {
+      showLeaderboard();
+    });
+    
+    document.getElementById('statsBtn').addEventListener('click', () => {
+      showStats();
+    });
+    
+    document.getElementById('tutorialBtn').addEventListener('click', () => {
+      showTutorial();
+    });
+    
+    document.getElementById('backToMenuFromTutorial').addEventListener('click', () => {
+      showMainMenu();
+    });
+    
+    document.getElementById('backToMenuFromStats').addEventListener('click', () => {
+      showMainMenu();
+    });
+    
+    document.getElementById('backToMenuFromLeaderboard').addEventListener('click', () => {
+      showMainMenu();
+    });
+    
+    document.getElementById('leaderboard4x4Tab').addEventListener('click', () => {
+      currentLeaderboardMode = '4x4';
+      document.getElementById('leaderboard4x4Tab').className = 'px-6 py-3 rounded-lg font-bold transition text-lg bg-red-600 text-white';
+      document.getElementById('leaderboard6x6Tab').className = 'px-6 py-3 rounded-lg font-bold transition text-lg bg-gray-300 text-gray-700';
+      renderLeaderboard();
+    });
+    
+    document.getElementById('leaderboard6x6Tab').addEventListener('click', () => {
+      currentLeaderboardMode = '6x6';
+      document.getElementById('leaderboard6x6Tab').className = 'px-6 py-3 rounded-lg font-bold transition text-lg bg-red-600 text-white';
+      document.getElementById('leaderboard4x4Tab').className = 'px-6 py-3 rounded-lg font-bold transition text-lg bg-gray-300 text-gray-700';
+      renderLeaderboard();
+    });
+    
+    document.getElementById('backToMenuBtn').addEventListener('click', () => {
+      showMainMenu();
+    });
+    
+    document.getElementById('newGameBtn').addEventListener('click', () => {
+      initGame();
+    });
+    
+    document.getElementById('restartFromGameOver').addEventListener('click', () => {
+      document.getElementById('gameOverScreen').style.display = 'none';
+      document.getElementById('gameScreen').style.display = 'block';
+      initGame();
+    });
+    
+    document.getElementById('viewStatsFromGameOver').addEventListener('click', () => {
+      document.getElementById('gameOverScreen').style.display = 'none';
+      showStats();
+    });
+    
+    document.getElementById('viewLeaderboardFromGameOver').addEventListener('click', () => {
+      document.getElementById('gameOverScreen').style.display = 'none';
+      showLeaderboard();
+    });
+    
+    document.getElementById('backToMenuFromGameOver').addEventListener('click', () => {
+      document.getElementById('gameOverScreen').style.display = 'none';
+      showMainMenu();
+    });
+
+    async function onConfigChange(config) {
+      document.getElementById('gameTitle').textContent = config.game_title || defaultConfig.game_title;
+      document.getElementById('instructions').textContent = config.instructions_text || defaultConfig.instructions_text;
+      document.getElementById('newGameBtn').textContent = config.new_game_button || defaultConfig.new_game_button;
+      document.getElementById('scoreLabel').textContent = config.score_label || defaultConfig.score_label;
+      document.getElementById('bestScoreLabel').textContent = config.best_score_label || defaultConfig.best_score_label;
+      
+      const containers = document.querySelectorAll('.game-container');
+      containers.forEach(container => {
+        container.style.background = config.background_color || defaultConfig.background_color;
+      });
+      
+      updateDisplay();
+    }
+
+    async function init() {
+      await preloadImages();
+      
+      const loadingIndicator = document.getElementById('loadingIndicator');
+      if (loadingIndicator) {
+        loadingIndicator.style.display = 'none';
+      }
+
+      playerId = getOrCreatePlayerId();
+      loadAchievements();
+
+      if (window.dataSdk) {
+        const initResult = await window.dataSdk.init(dataHandler);
+        if (initResult.isError) {
+          console.error('Failed to initialize Data SDK:', initResult.error);
+        }
+      }
+
+      const savedName = localStorage.getItem('2048-christmas-player-name');
+      const savedAvatar = localStorage.getItem('2048-christmas-player-avatar');
+      
+      if (savedName && savedAvatar) {
+        playerName = savedName;
+        playerAvatar = savedAvatar;
+        document.getElementById('playerNameInput').value = savedName;
+        showMainMenu();
+      } else {
+        showNameInput();
+      }
+    }
+
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', init);
+    } else {
+      init();
+    }
+
+    if (window.elementSdk) {
+      window.elementSdk.init({
+        defaultConfig,
+        onConfigChange,
+        mapToCapabilities: (config) => ({
+          recolorables: [{
+            get: () => config.background_color || defaultConfig.background_color,
+            set: (value) => {
+              config.background_color = value;
+              window.elementSdk.setConfig({ background_color: value });
+            }
+          }],
+          borderables: [],
+          fontEditable: undefined,
+          fontSizeable: undefined
+        }),
+        mapToEditPanelValues: (config) => new Map([
+          ["game_title", config.game_title || defaultConfig.game_title],
+          ["instructions_text", config.instructions_text || defaultConfig.instructions_text],
+          ["new_game_button", config.new_game_button || defaultConfig.new_game_button],
+          ["score_label", config.score_label || defaultConfig.score_label],
+          ["best_score_label", config.best_score_label || defaultConfig.best_score_label]
+        ])
+      });
+    }
+  </script>
+ </body>
+</html>
