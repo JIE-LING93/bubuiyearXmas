@@ -1226,12 +1226,34 @@ function preloadImages() {
       }
     }
 
-    function renderLeaderboard() {
-      const content = document.getElementById('leaderboardContent');
-      const filtered = leaderboardData
-        .filter(record => record.game_mode === currentLeaderboardMode)
-        .sort((a, b) => b.score - a.score)
-        .slice(0, 10);
+async function renderLeaderboard() {
+  const content = document.getElementById('leaderboardContent');
+
+  content.innerHTML = '<p class="text-center py-8">排行榜載入中...</p>';
+
+  let records = leaderboardData;
+
+  if (db) {
+    const { data, error } = await db
+      .from('legacy_scores')
+      .select('*')
+      .eq('game_mode', currentLeaderboardMode)
+      .order('score', { ascending: false })
+      .limit(10);
+
+    if (error) {
+      console.error('歷史排行榜讀取失敗:', error);
+      content.innerHTML = '<p class="text-center py-8">排行榜載入失敗，請稍後再試。</p>';
+      return;
+    }
+
+    records = data || [];
+  }
+
+  const filtered = records
+    .filter(record => record.game_mode === currentLeaderboardMode)
+    .sort((a, b) => b.score - a.score)
+    .slice(0, 10);
 
       if (filtered.length === 0) {
         content.innerHTML = `
