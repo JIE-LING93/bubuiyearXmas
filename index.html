@@ -1250,10 +1250,18 @@ async function renderLeaderboard() {
     records = data || [];
   }
 
-  const filtered = records
-    .filter(record => record.game_mode === currentLeaderboardMode)
-    .sort((a, b) => b.score - a.score)
-    .slice(0, 10);
+ const uniquePlayers = new Map();
+
+records
+  .filter(record => record.game_mode === currentLeaderboardMode)
+  .sort((a, b) => b.score - a.score)
+  .forEach(record => {
+    if (!uniquePlayers.has(record.player_id)) {
+      uniquePlayers.set(record.player_id, record);
+    }
+  });
+
+const filtered = Array.from(uniquePlayers.values()).slice(0, 10);
 
       if (filtered.length === 0) {
         content.innerHTML = `
