@@ -1624,16 +1624,21 @@ function preloadImages() {
       }
     }
 
-    document.getElementById('nameForm').addEventListener('submit', async (e) => {
-      e.preventDefault();
-      const nameInput = document.getElementById('playerNameInput');
-      playerName = nameInput.value.trim();
-      if (playerName && playerAvatar) {
-  localStorage.setItem('2048-christmas-player-name', playerName);
-  localStorage.setItem('2048-christmas-player-avatar', playerAvatar);
-  showMainMenu();
-}
-    });
+document.getElementById('nameForm').addEventListener('submit', async (e) => {
+  e.preventDefault();
+
+  const nameInput = document.getElementById('playerNameInput');
+  playerName = nameInput.value.trim();
+
+  if (playerName && playerAvatar) {
+    localStorage.setItem('2048-christmas-player-name', playerName);
+    localStorage.setItem('2048-christmas-player-avatar', playerAvatar);
+
+    await saveOnlineProfile();
+
+    showMainMenu();
+  }
+});
     
     document.getElementById('changeNameBtn').addEventListener('click', () => {
       showNameInput();
