@@ -1745,6 +1745,8 @@ function preloadImages() {
       playerId = getOrCreatePlayerId();
       loadAchievements();
 
+     await loadOnlineIdentity();
+
       if (window.dataSdk) {
         const initResult = await window.dataSdk.init(dataHandler);
         if (initResult.isError) {
