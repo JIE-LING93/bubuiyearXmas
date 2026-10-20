@@ -1809,5 +1809,69 @@ document.getElementById('nameForm').addEventListener('submit', async (e) => {
     }
 
     </script>
+  
+<script>
+const gameSound = {
+  enabled: localStorage.getItem('bubuiyearSound') !== 'off',
+  context: null,
+
+  play(frequency = 600, duration = 0.08, type = 'sine', volume = 0.08) {
+    if (!this.enabled) return;
+
+    try {
+      const AudioContextClass = window.AudioContext || window.webkitAudioContext;
+      if (!AudioContextClass) return;
+
+      if (!this.context) this.context = new AudioContextClass();
+      if (this.context.state === 'suspended') this.context.resume();
+
+      const oscillator = this.context.createOscillator();
+      const gain = this.context.createGain();
+
+      oscillator.type = type;
+      oscillator.frequency.value = frequency;
+
+      gain.gain.setValueAtTime(volume, this.context.currentTime);
+      gain.gain.exponentialRampToValueAtTime(
+        0.001,
+        this.context.currentTime + duration
+      );
+
+      oscillator.connect(gain);
+      gain.connect(this.context.destination);
+
+      oscillator.start();
+      oscillator.stop(this.context.currentTime + duration);
+    } catch (error) {
+      console.warn('音效播放失敗', error);
+    }
+  },
+
+  move() {
+    this.play(350, 0.04, 'sine', 0.035);
+  },
+
+  merge() {
+    this.play(700, 0.12, 'sine', 0.07);
+  },
+
+  click() {
+    this.play(500, 0.05, 'sine', 0.04);
+  },
+
+  win() {
+    [523, 659, 784, 1047].forEach((note, index) => {
+      setTimeout(() => this.play(note, 0.2), index * 130);
+    });
+  },
+
+  toggle() {
+    this.enabled = !this.enabled;
+    localStorage.setItem('bubuiyearSound', this.enabled ? 'on' : 'off');
+    return this.enabled;
+  }
+};
+</script>
+
  </body>
 </html>
