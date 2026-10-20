@@ -1480,9 +1480,10 @@ const filtered = Array.from(uniquePlayers.values()).slice(0, 10);
        }
     }
 
-    function move(direction) {
-      let moved = false;
-      const oldGrid = JSON.stringify(grid);
+function move(direction) {
+  let moved = false;
+  const oldGrid = JSON.stringify(grid);
+  const oldScore = score;
       
       if (direction === 'left') {
         for (let i = 0; i < GRID_SIZE; i++) {
@@ -1546,10 +1547,16 @@ const filtered = Array.from(uniquePlayers.values()).slice(0, 10);
         }
       }
       
-      moved = oldGrid !== JSON.stringify(grid);
-      
-      if (moved) {
-        addRandomTile();
+     moved = oldGrid !== JSON.stringify(grid);
+
+if (moved) {
+  if (score > oldScore) {
+    gameSound.merge();
+  } else {
+    gameSound.move();
+  }
+
+  addRandomTile();
         if (score > bestScore) {
           bestScore = score;
           localStorage.setItem(`2048-christmas-best-score-${currentMode}`, bestScore.toString());
